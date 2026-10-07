@@ -1,0 +1,716 @@
+[2026-10-03T13:47:48.609Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:47:48.609Z] 36.58.473.274 I slot launch_slot_: id  0 | task 23923 | processing task, is_child = 0
+[2026-10-03T13:47:48.609Z] 36.58.473.354 I slot   operator(): id  0 | task 23923 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 97210
+[2026-10-03T13:47:48.609Z] 36.58.473.363 I slot   operator(): id  0 | task 23923 | checking checkpoint with [94915, 94915] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.364 I slot   operator(): id  0 | task 23923 | checking checkpoint with [94691, 94691] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.365 I slot   operator(): id  0 | task 23923 | checking checkpoint with [93172, 93172] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.365 I slot   operator(): id  0 | task 23923 | checking checkpoint with [93082, 93082] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.366 I slot   operator(): id  0 | task 23923 | checking checkpoint with [92973, 92973] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.366 I slot   operator(): id  0 | task 23923 | checking checkpoint with [92937, 92937] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.366 I slot   operator(): id  0 | task 23923 | checking checkpoint with [92761, 92761] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.367 I slot   operator(): id  0 | task 23923 | checking checkpoint with [92537, 92537] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.367 I slot   operator(): id  0 | task 23923 | checking checkpoint with [91255, 91255] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.367 I slot   operator(): id  0 | task 23923 | checking checkpoint with [91031, 91031] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.368 I slot   operator(): id  0 | task 23923 | checking checkpoint with [87767, 87767] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.368 I slot   operator(): id  0 | task 23923 | checking checkpoint with [87543, 87543] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.368 I slot   operator(): id  0 | task 23923 | checking checkpoint with [87316, 87316] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.369 I slot   operator(): id  0 | task 23923 | checking checkpoint with [87092, 87092] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.369 I slot   operator(): id  0 | task 23923 | checking checkpoint with [86825, 86825] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.369 I slot   operator(): id  0 | task 23923 | checking checkpoint with [86601, 86601] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.370 I slot   operator(): id  0 | task 23923 | checking checkpoint with [86514, 86514] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.370 I slot   operator(): id  0 | task 23923 | checking checkpoint with [86290, 86290] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.370 I slot   operator(): id  0 | task 23923 | checking checkpoint with [85785, 85785] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.371 I slot   operator(): id  0 | task 23923 | checking checkpoint with [80743, 80743] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.371 I slot   operator(): id  0 | task 23923 | checking checkpoint with [73154, 73154] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.371 I slot   operator(): id  0 | task 23923 | checking checkpoint with [63860, 63860] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.371 I slot   operator(): id  0 | task 23923 | checking checkpoint with [59721, 59721] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.372 I slot   operator(): id  0 | task 23923 | checking checkpoint with [55616, 55616] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.372 I slot   operator(): id  0 | task 23923 | checking checkpoint with [51440, 51440] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.373 I slot   operator(): id  0 | task 23923 | checking checkpoint with [46984, 46984] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.373 I slot   operator(): id  0 | task 23923 | checking checkpoint with [39830, 39830] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.373 I slot   operator(): id  0 | task 23923 | checking checkpoint with [35688, 35688] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.374 I slot   operator(): id  0 | task 23923 | checking checkpoint with [30283, 30283] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.374 I slot   operator(): id  0 | task 23923 | checking checkpoint with [25895, 25895] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.375 I slot   operator(): id  0 | task 23923 | checking checkpoint with [16318, 16318] against 9981...
+[2026-10-03T13:47:48.609Z] 36.58.473.376 I slot   operator(): id  0 | task 23923 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+[2026-10-03T13:47:48.609Z] 36.58.473.377 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 16318, pos_max = 16318, n_tokens = 16319, n_swa = 0, pos_next = 0, size = 213.746 MiB)
+[2026-10-03T13:47:48.620Z] 36.58.484.968 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 25895, pos_max = 25895, n_tokens = 25896, n_swa = 0, pos_next = 0, size = 251.375 MiB)
+[2026-10-03T13:47:48.634Z] 36.58.498.474 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 30283, pos_max = 30283, n_tokens = 30284, n_swa = 0, pos_next = 0, size = 268.616 MiB)
+[2026-10-03T13:47:48.650Z] 36.58.515.039 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 35688, pos_max = 35688, n_tokens = 35689, n_swa = 0, pos_next = 0, size = 289.853 MiB)
+[2026-10-03T13:47:48.668Z] 36.58.532.490 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 39830, pos_max = 39830, n_tokens = 39831, n_swa = 0, pos_next = 0, size = 306.128 MiB)
+[2026-10-03T13:47:48.686Z] 36.58.550.270 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 46984, pos_max = 46984, n_tokens = 46985, n_swa = 0, pos_next = 0, size = 334.237 MiB)
+[2026-10-03T13:47:48.705Z] 36.58.569.752 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 51440, pos_max = 51440, n_tokens = 51441, n_swa = 0, pos_next = 0, size = 351.745 MiB)
+[2026-10-03T13:47:48.725Z] 36.58.590.012 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 55616, pos_max = 55616, n_tokens = 55617, n_swa = 0, pos_next = 0, size = 368.153 MiB)
+[2026-10-03T13:47:48.746Z] 36.58.610.843 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 59721, pos_max = 59721, n_tokens = 59722, n_swa = 0, pos_next = 0, size = 384.282 MiB)
+[2026-10-03T13:47:48.768Z] 36.58.632.663 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 63860, pos_max = 63860, n_tokens = 63861, n_swa = 0, pos_next = 0, size = 400.545 MiB)
+[2026-10-03T13:47:48.791Z] 36.58.655.613 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 73154, pos_max = 73154, n_tokens = 73155, n_swa = 0, pos_next = 0, size = 437.062 MiB)
+[2026-10-03T13:47:48.816Z] 36.58.680.732 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 80743, pos_max = 80743, n_tokens = 80744, n_swa = 0, pos_next = 0, size = 466.880 MiB)
+[2026-10-03T13:47:48.844Z] 36.58.708.971 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 85785, pos_max = 85785, n_tokens = 85786, n_swa = 0, pos_next = 0, size = 486.691 MiB)
+[2026-10-03T13:47:48.873Z] 36.58.737.271 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 86290, pos_max = 86290, n_tokens = 86291, n_swa = 0, pos_next = 0, size = 488.675 MiB)
+[2026-10-03T13:47:48.901Z] 36.58.765.533 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 86514, pos_max = 86514, n_tokens = 86515, n_swa = 0, pos_next = 0, size = 489.556 MiB)
+[2026-10-03T13:47:48.930Z] 36.58.794.338 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 86601, pos_max = 86601, n_tokens = 86602, n_swa = 0, pos_next = 0, size = 489.897 MiB)
+[2026-10-03T13:47:48.959Z] 36.58.823.891 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 86825, pos_max = 86825, n_tokens = 86826, n_swa = 0, pos_next = 0, size = 490.778 MiB)
+[2026-10-03T13:47:48.987Z] 36.58.852.017 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 87092, pos_max = 87092, n_tokens = 87093, n_swa = 0, pos_next = 0, size = 491.827 MiB)
+[2026-10-03T13:47:49.015Z] 36.58.879.386 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 87316, pos_max = 87316, n_tokens = 87317, n_swa = 0, pos_next = 0, size = 492.707 MiB)
+[2026-10-03T13:47:49.040Z] 36.58.904.909 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 87543, pos_max = 87543, n_tokens = 87544, n_swa = 0, pos_next = 0, size = 493.599 MiB)
+[2026-10-03T13:47:49.068Z] 36.58.933.109 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 87767, pos_max = 87767, n_tokens = 87768, n_swa = 0, pos_next = 0, size = 494.479 MiB)
+[2026-10-03T13:47:49.097Z] 36.58.961.646 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 91031, pos_max = 91031, n_tokens = 91032, n_swa = 0, pos_next = 0, size = 507.303 MiB)
+[2026-10-03T13:47:49.126Z] 36.58.990.698 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 91255, pos_max = 91255, n_tokens = 91256, n_swa = 0, pos_next = 0, size = 508.184 MiB)
+[2026-10-03T13:47:49.155Z] 36.59.019.878 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 92537, pos_max = 92537, n_tokens = 92538, n_swa = 0, pos_next = 0, size = 513.221 MiB)
+[2026-10-03T13:47:49.185Z] 36.59.049.487 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 92761, pos_max = 92761, n_tokens = 92762, n_swa = 0, pos_next = 0, size = 514.101 MiB)
+[2026-10-03T13:47:49.214Z] 36.59.078.611 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 92937, pos_max = 92937, n_tokens = 92938, n_swa = 0, pos_next = 0, size = 514.792 MiB)
+[2026-10-03T13:47:49.243Z] 36.59.107.935 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 92973, pos_max = 92973, n_tokens = 92974, n_swa = 0, pos_next = 0, size = 514.934 MiB)
+[2026-10-03T13:47:49.273Z] 36.59.137.963 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 93082, pos_max = 93082, n_tokens = 93083, n_swa = 0, pos_next = 0, size = 515.362 MiB)
+[2026-10-03T13:47:49.303Z] 36.59.167.998 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 93172, pos_max = 93172, n_tokens = 93173, n_swa = 0, pos_next = 0, size = 515.716 MiB)
+[2026-10-03T13:47:49.333Z] 36.59.197.218 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 94691, pos_max = 94691, n_tokens = 94692, n_swa = 0, pos_next = 0, size = 521.684 MiB)
+[2026-10-03T13:47:49.362Z] 36.59.226.796 I slot   operator(): id  0 | task 23923 | erased invalidated context checkpoint (pos_min = 94915, pos_max = 94915, n_tokens = 94916, n_swa = 0, pos_next = 0, size = 522.564 MiB)
+[2026-10-03T13:47:49.393Z] 36.59.257.689 I slot   operator(): id  0 | task 23923 | cached n_tokens = 0, memory_seq_rm [0, end)
+[2026-10-03T13:47:54.001Z] 37.03.865.517 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =   4480, progress = 0.05, t =   5.16 s / 868.08 tokens per second
+[2026-10-03T13:47:54.001Z] 37.03.865.520 I slot   operator(): id  0 | task 23923 | cached n_tokens = 4480, memory_seq_rm [4480, end)
+[2026-10-03T13:47:58.805Z] 37.08.669.139 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =   8960, progress = 0.09, t =   9.81 s / 912.99 tokens per second
+[2026-10-03T13:47:58.805Z] 37.08.669.141 I slot   operator(): id  0 | task 23923 | cached n_tokens = 8960, memory_seq_rm [8960, end)
+[2026-10-03T13:48:03.865Z] 37.13.729.279 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  13440, progress = 0.14, t =  15.01 s / 895.64 tokens per second
+[2026-10-03T13:48:03.865Z] 37.13.729.282 I slot   operator(): id  0 | task 23923 | cached n_tokens = 13440, memory_seq_rm [13440, end)
+[2026-10-03T13:48:07.221Z] 37.17.085.147 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  16260, progress = 0.17, t =  18.43 s / 882.32 tokens per second
+[2026-10-03T13:48:07.221Z] 37.17.085.149 I slot   operator(): id  0 | task 23923 | cached n_tokens = 16260, memory_seq_rm [16260, end)
+[2026-10-03T13:48:07.317Z] 37.17.181.699 I slot create_check: id  0 | task 23923 | created context checkpoint 1 of 32 (pos_min = 16259, pos_max = 16259, n_tokens = 16260, size = 213.514 MiB)
+[2026-10-03T13:48:12.795Z] 37.22.659.187 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  20740, progress = 0.21, t =  23.88 s / 868.47 tokens per second
+[2026-10-03T13:48:12.795Z] 37.22.659.189 I slot   operator(): id  0 | task 23923 | cached n_tokens = 20740, memory_seq_rm [20740, end)
+[2026-10-03T13:48:18.482Z] 37.28.346.836 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  25220, progress = 0.26, t =  29.57 s / 852.87 tokens per second
+[2026-10-03T13:48:18.482Z] 37.28.346.838 I slot   operator(): id  0 | task 23923 | cached n_tokens = 25220, memory_seq_rm [25220, end)
+[2026-10-03T13:48:20.046Z] 37.29.910.170 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  26387, progress = 0.27, t =  31.34 s / 841.92 tokens per second
+[2026-10-03T13:48:20.046Z] 37.29.910.172 I slot   operator(): id  0 | task 23923 | cached n_tokens = 26387, memory_seq_rm [26387, end)
+[2026-10-03T13:48:20.161Z] 37.30.025.806 I slot create_check: id  0 | task 23923 | created context checkpoint 2 of 32 (pos_min = 26386, pos_max = 26386, n_tokens = 26387, size = 253.304 MiB)
+[2026-10-03T13:48:26.178Z] 37.36.042.613 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  30867, progress = 0.32, t =  37.22 s / 829.33 tokens per second
+[2026-10-03T13:48:26.178Z] 37.36.042.616 I slot   operator(): id  0 | task 23923 | cached n_tokens = 30867, memory_seq_rm [30867, end)
+[2026-10-03T13:48:32.402Z] 37.42.267.006 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  35347, progress = 0.36, t =  43.45 s / 813.58 tokens per second
+[2026-10-03T13:48:32.402Z] 37.42.267.009 I slot   operator(): id  0 | task 23923 | cached n_tokens = 35347, memory_seq_rm [35347, end)
+[2026-10-03T13:48:38.869Z] 37.48.733.703 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  39827, progress = 0.41, t =  49.89 s / 798.22 tokens per second
+[2026-10-03T13:48:38.869Z] 37.48.733.705 I slot   operator(): id  0 | task 23923 | cached n_tokens = 39827, memory_seq_rm [39827, end)
+[2026-10-03T13:48:45.572Z] 37.55.436.838 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  44307, progress = 0.46, t =  56.58 s / 783.10 tokens per second
+[2026-10-03T13:48:45.572Z] 37.55.436.841 I slot   operator(): id  0 | task 23923 | cached n_tokens = 44307, memory_seq_rm [44307, end)
+[2026-10-03T13:48:52.519Z] 38.02.383.894 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  48787, progress = 0.50, t =  63.51 s / 768.24 tokens per second
+[2026-10-03T13:48:52.519Z] 38.02.383.897 I slot   operator(): id  0 | task 23923 | cached n_tokens = 48787, memory_seq_rm [48787, end)
+[2026-10-03T13:48:59.701Z] 38.09.565.174 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  53267, progress = 0.55, t =  70.67 s / 753.80 tokens per second
+[2026-10-03T13:48:59.701Z] 38.09.565.176 I slot   operator(): id  0 | task 23923 | cached n_tokens = 53267, memory_seq_rm [53267, end)
+[2026-10-03T13:49:07.112Z] 38.16.976.255 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  57747, progress = 0.59, t =  78.06 s / 739.78 tokens per second
+[2026-10-03T13:49:07.112Z] 38.16.976.257 I slot   operator(): id  0 | task 23923 | cached n_tokens = 57747, memory_seq_rm [57747, end)
+[2026-10-03T13:49:14.750Z] 38.24.614.838 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  62227, progress = 0.64, t =  85.68 s / 726.27 tokens per second
+[2026-10-03T13:49:14.750Z] 38.24.614.841 I slot   operator(): id  0 | task 23923 | cached n_tokens = 62227, memory_seq_rm [62227, end)
+[2026-10-03T13:49:15.234Z] 38.25.098.397 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  62475, progress = 0.64, t =  86.57 s / 721.65 tokens per second
+[2026-10-03T13:49:15.234Z] 38.25.098.400 I slot   operator(): id  0 | task 23923 | cached n_tokens = 62475, memory_seq_rm [62475, end)
+[2026-10-03T13:49:15.412Z] 38.25.275.921 I slot create_check: id  0 | task 23923 | created context checkpoint 3 of 32 (pos_min = 62474, pos_max = 62474, n_tokens = 62475, size = 395.099 MiB)
+[2026-10-03T13:49:20.922Z] 38.30.787.051 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  65565, progress = 0.67, t =  91.92 s / 713.26 tokens per second
+[2026-10-03T13:49:20.923Z] 38.30.787.053 I slot   operator(): id  0 | task 23923 | cached n_tokens = 65565, memory_seq_rm [65565, end)
+[2026-10-03T13:49:28.982Z] 38.38.846.684 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  70045, progress = 0.72, t =  99.87 s / 701.39 tokens per second
+[2026-10-03T13:49:28.982Z] 38.38.846.687 I slot   operator(): id  0 | task 23923 | cached n_tokens = 70045, memory_seq_rm [70045, end)
+[2026-10-03T13:49:37.273Z] 38.47.137.151 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  74525, progress = 0.77, t = 108.15 s / 689.11 tokens per second
+[2026-10-03T13:49:37.273Z] 38.47.137.153 I slot   operator(): id  0 | task 23923 | cached n_tokens = 74525, memory_seq_rm [74525, end)
+[2026-10-03T13:49:45.817Z] 38.55.681.658 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  79005, progress = 0.81, t = 116.67 s / 677.17 tokens per second
+[2026-10-03T13:49:45.817Z] 38.55.681.661 I slot   operator(): id  0 | task 23923 | cached n_tokens = 79005, memory_seq_rm [79005, end)
+[2026-10-03T13:49:54.588Z] 39.04.452.838 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  83485, progress = 0.86, t = 125.42 s / 665.63 tokens per second
+[2026-10-03T13:49:54.588Z] 39.04.452.840 I slot   operator(): id  0 | task 23923 | cached n_tokens = 83485, memory_seq_rm [83485, end)
+[2026-10-03T13:50:03.607Z] 39.13.471.449 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  87965, progress = 0.90, t = 134.42 s / 654.41 tokens per second
+[2026-10-03T13:50:03.607Z] 39.13.471.452 I slot   operator(): id  0 | task 23923 | cached n_tokens = 87965, memory_seq_rm [87965, end)
+[2026-10-03T13:50:12.865Z] 39.22.729.661 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  92445, progress = 0.95, t = 143.66 s / 643.51 tokens per second
+[2026-10-03T13:50:12.865Z] 39.22.729.664 I slot   operator(): id  0 | task 23923 | cached n_tokens = 92445, memory_seq_rm [92445, end)
+[2026-10-03T13:50:18.205Z] 39.28.069.641 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  94952, progress = 0.98, t = 149.29 s / 636.02 tokens per second
+[2026-10-03T13:50:18.205Z] 39.28.069.643 I slot   operator(): id  0 | task 23923 | cached n_tokens = 94952, memory_seq_rm [94952, end)
+[2026-10-03T13:50:18.438Z] 39.28.302.853 I slot create_check: id  0 | task 23923 | created context checkpoint 4 of 32 (pos_min = 94951, pos_max = 94951, n_tokens = 94952, size = 522.706 MiB)
+[2026-10-03T13:50:22.846Z] 39.32.710.514 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  96982, progress = 1.00, t = 153.99 s / 629.81 tokens per second
+[2026-10-03T13:50:22.846Z] 39.32.710.516 I slot   operator(): id  0 | task 23923 | cached n_tokens = 96982, memory_seq_rm [96982, end)
+[2026-10-03T13:50:23.080Z] 39.32.944.428 I slot create_check: id  0 | task 23923 | created context checkpoint 5 of 32 (pos_min = 96981, pos_max = 96981, n_tokens = 96982, size = 530.682 MiB)
+[2026-10-03T13:50:23.551Z] 39.33.415.751 I slot print_timing: id  0 | task 23923 | prompt processing, n_tokens =  97206, progress = 1.00, t = 154.77 s / 628.09 tokens per second
+[2026-10-03T13:50:23.551Z] 39.33.415.754 I slot   operator(): id  0 | task 23923 | cached n_tokens = 97206, memory_seq_rm [97206, end)
+[2026-10-03T13:50:23.561Z] 39.33.425.357 I slot init_sampler: id  0 | task 23923 | init sampler, took 9.48 ms, tokens: text = 97210, total = 97210
+[2026-10-03T13:50:23.795Z] 39.33.659.642 I slot create_check: id  0 | task 23923 | created context checkpoint 6 of 32 (pos_min = 97205, pos_max = 97205, n_tokens = 97206, size = 531.562 MiB)
+[2026-10-03T13:50:23.875Z] 39.33.739.525 I spec        begin: ngram_mod occupancy = 85997/4194304 (0.02)
+[2026-10-03T13:50:27.117Z] 39.36.981.264 I slot print_timing: id  0 | task 23923 | n_gen =    101, tg =  30.85 t/s, tg_3s =  31.16 t/s
+[2026-10-03T13:50:30.118Z] 39.39.982.785 I slot print_timing: id  0 | task 23923 | n_gen =    205, tg =  32.68 t/s, tg_3s =  34.65 t/s
+[2026-10-03T13:50:33.189Z] 39.43.053.639 I slot print_timing: id  0 | task 23923 | n_gen =    306, tg =  32.75 t/s, tg_3s =  32.89 t/s
+[2026-10-03T13:50:36.238Z] 39.46.102.751 I slot print_timing: id  0 | task 23923 | n_gen =    401, tg =  32.36 t/s, tg_3s =  31.16 t/s
+[2026-10-03T13:50:39.246Z] 39.49.110.790 I slot print_timing: id  0 | task 23923 | n_gen =    496, tg =  32.20 t/s, tg_3s =  31.58 t/s
+[2026-10-03T13:50:42.306Z] 39.52.170.749 I slot print_timing: id  0 | task 23923 | n_gen =    616, tg =  33.37 t/s, tg_3s =  39.22 t/s
+[2026-10-03T13:50:45.306Z] 39.55.170.996 I slot print_timing: id  0 | task 23923 | n_gen =    760, tg =  35.42 t/s, tg_3s =  48.00 t/s
+[2026-10-03T13:50:48.386Z] 39.58.250.742 I slot print_timing: id  0 | task 23923 | n_gen =    876, tg =  35.70 t/s, tg_3s =  37.67 t/s
+[2026-10-03T13:50:51.464Z] 40.01.328.379 I slot print_timing: id  0 | task 23923 | n_gen =    960, tg =  34.76 t/s, tg_3s =  27.29 t/s
+[2026-10-03T13:50:54.549Z] 40.04.413.326 I slot print_timing: id  0 | task 23923 | n_gen =   1073, tg =  34.95 t/s, tg_3s =  36.63 t/s
+[2026-10-03T13:50:57.633Z] 40.07.497.299 I slot print_timing: id  0 | task 23923 | n_gen =   1196, tg =  35.40 t/s, tg_3s =  39.88 t/s
+[2026-10-03T13:51:00.650Z] 40.10.514.476 I slot print_timing: id  0 | task 23923 | n_gen =   1317, tg =  35.79 t/s, tg_3s =  40.10 t/s
+[2026-10-03T13:51:03.669Z] 40.13.533.623 I slot print_timing: id  0 | task 23923 | n_gen =   1449, tg =  36.39 t/s, tg_3s =  43.72 t/s
+[2026-10-03T13:51:06.677Z] 40.16.542.017 I slot print_timing: id  0 | task 23923 | n_gen =   1558, tg =  36.38 t/s, tg_3s =  36.23 t/s
+[2026-10-03T13:51:09.751Z] 40.19.615.581 I slot print_timing: id  0 | task 23923 | n_gen =   1701, tg =  37.06 t/s, tg_3s =  46.53 t/s
+[2026-10-03T13:51:12.777Z] 40.22.641.388 I slot print_timing: id  0 | task 23923 | n_gen =   1817, tg =  37.14 t/s, tg_3s =  38.34 t/s
+[2026-10-03T13:51:15.827Z] 40.25.692.007 I slot print_timing: id  0 | task 23923 | n_gen =   1924, tg =  37.02 t/s, tg_3s =  35.07 t/s
+[2026-10-03T13:51:18.937Z] 40.28.801.891 I slot print_timing: id  0 | task 23923 | n_gen =   2069, tg =  37.56 t/s, tg_3s =  46.63 t/s
+[2026-10-03T13:51:22.020Z] 40.31.884.593 I slot print_timing: id  0 | task 23923 | n_gen =   2146, tg =  36.89 t/s, tg_3s =  24.98 t/s
+[2026-10-03T13:51:25.021Z] 40.34.885.068 I slot print_timing: id  0 | task 23923 | n_gen =   2210, tg =  36.13 t/s, tg_3s =  21.33 t/s
+[2026-10-03T13:51:28.046Z] 40.37.910.349 I slot print_timing: id  0 | task 23923 | n_gen =   2348, tg =  36.57 t/s, tg_3s =  45.62 t/s
+[2026-10-03T13:51:31.055Z] 40.40.919.216 I slot print_timing: id  0 | task 23923 | n_gen =   2421, tg =  36.02 t/s, tg_3s =  24.26 t/s
+[2026-10-03T13:51:34.106Z] 40.43.970.784 I slot print_timing: id  0 | task 23923 | n_gen =   2525, tg =  35.94 t/s, tg_3s =  34.08 t/s
+[2026-10-03T13:51:37.196Z] 40.47.060.773 I slot print_timing: id  0 | task 23923 | n_gen =   2624, tg =  35.77 t/s, tg_3s =  32.04 t/s
+[2026-10-03T13:51:40.228Z] 40.50.092.536 I slot print_timing: id  0 | task 23923 | n_gen =   2739, tg =  35.86 t/s, tg_3s =  37.93 t/s
+[2026-10-03T13:51:43.248Z] 40.53.112.686 I slot print_timing: id  0 | task 23923 | n_gen =   2975, tg =  37.47 t/s, tg_3s =  78.14 t/s
+[2026-10-03T13:51:46.329Z] 40.56.193.518 I slot print_timing: id  0 | task 23923 | n_gen =   3108, tg =  37.68 t/s, tg_3s =  43.17 t/s
+[2026-10-03T13:51:49.329Z] 40.59.194.001 I slot print_timing: id  0 | task 23923 | n_gen =   3225, tg =  37.73 t/s, tg_3s =  38.99 t/s
+[2026-10-03T13:51:52.379Z] 41.02.243.583 I slot print_timing: id  0 | task 23923 | n_gen =   3329, tg =  37.60 t/s, tg_3s =  34.10 t/s
+[2026-10-03T13:51:55.393Z] 41.05.257.742 I slot print_timing: id  0 | task 23923 | n_gen =   3423, tg =  37.39 t/s, tg_3s =  31.19 t/s
+[2026-10-03T13:51:58.459Z] 41.08.323.365 I slot print_timing: id  0 | task 23923 | n_gen =   3551, tg =  37.53 t/s, tg_3s =  41.75 t/s
+[2026-10-03T13:52:01.490Z] 41.11.354.867 I slot print_timing: id  0 | task 23923 | n_gen =   3668, tg =  37.57 t/s, tg_3s =  38.59 t/s
+[2026-10-03T13:52:04.509Z] 41.14.373.205 I slot print_timing: id  0 | task 23923 | n_gen =   3788, tg =  37.63 t/s, tg_3s =  39.76 t/s
+[2026-10-03T13:52:07.586Z] 41.17.450.792 I slot print_timing: id  0 | task 23923 | n_gen =   3973, tg =  38.30 t/s, tg_3s =  60.11 t/s
+[2026-10-03T13:52:10.686Z] 41.20.550.264 I slot print_timing: id  0 | task 23923 | n_gen =   4145, tg =  38.80 t/s, tg_3s =  55.49 t/s
+[2026-10-03T13:52:13.692Z] 41.23.556.863 I slot print_timing: id  0 | task 23923 | n_gen =   4303, tg =  39.17 t/s, tg_3s =  52.55 t/s
+[2026-10-03T13:52:16.733Z] 41.26.597.507 I slot print_timing: id  0 | task 23923 | n_gen =   4424, tg =  39.19 t/s, tg_3s =  39.79 t/s
+[2026-10-03T13:52:19.746Z] 41.29.610.819 I slot print_timing: id  0 | task 23923 | n_gen =   4579, tg =  39.51 t/s, tg_3s =  51.44 t/s
+[2026-10-03T13:52:22.776Z] 41.32.640.923 I slot print_timing: id  0 | task 23923 | n_gen =   4692, tg =  39.45 t/s, tg_3s =  37.29 t/s
+[2026-10-03T13:52:25.859Z] 41.35.724.095 I slot print_timing: id  0 | task 23923 | n_gen =   4825, tg =  39.55 t/s, tg_3s =  43.14 t/s
+[2026-10-03T13:52:28.896Z] 41.38.760.385 I slot print_timing: id  0 | task 23923 | n_gen =   5005, tg =  40.03 t/s, tg_3s =  59.28 t/s
+[2026-10-03T13:52:31.974Z] 41.41.838.993 I slot print_timing: id  0 | task 23923 | n_gen =   5139, tg =  40.11 t/s, tg_3s =  43.53 t/s
+[2026-10-03T13:52:35.067Z] 41.44.931.198 I slot print_timing: id  0 | task 23923 | n_gen =   5256, tg =  40.06 t/s, tg_3s =  37.84 t/s
+[2026-10-03T13:52:38.126Z] 41.47.990.992 I slot print_timing: id  0 | task 23923 | n_gen =   5388, tg =  40.13 t/s, tg_3s =  43.14 t/s
+[2026-10-03T13:52:41.218Z] 41.51.082.013 I slot print_timing: id  0 | task 23923 | n_gen =   5517, tg =  40.16 t/s, tg_3s =  41.73 t/s
+[2026-10-03T13:52:44.241Z] 41.54.105.341 I slot print_timing: id  0 | task 23923 | n_gen =   5612, tg =  39.97 t/s, tg_3s =  31.42 t/s
+[2026-10-03T13:52:47.275Z] 41.57.139.694 I slot print_timing: id  0 | task 23923 | n_gen =   5750, tg =  40.09 t/s, tg_3s =  45.48 t/s
+[2026-10-03T13:52:50.299Z] 42.00.163.856 I slot print_timing: id  0 | task 23923 | n_gen =   5869, tg =  40.08 t/s, tg_3s =  39.35 t/s
+[2026-10-03T13:52:53.345Z] 42.03.210.012 I slot print_timing: id  0 | task 23923 | n_gen =   6002, tg =  40.15 t/s, tg_3s =  43.66 t/s
+[2026-10-03T13:52:56.438Z] 42.06.303.068 I slot print_timing: id  0 | task 23923 | n_gen =   6112, tg =  40.06 t/s, tg_3s =  35.56 t/s
+[2026-10-03T13:52:59.446Z] 42.09.310.859 I slot print_timing: id  0 | task 23923 | n_gen =   6234, tg =  40.07 t/s, tg_3s =  40.56 t/s
+[2026-10-03T13:53:02.505Z] 42.12.369.934 I slot print_timing: id  0 | task 23923 | n_gen =   6321, tg =  39.84 t/s, tg_3s =  28.44 t/s
+[2026-10-03T13:53:05.530Z] 42.15.394.783 I slot print_timing: id  0 | task 23923 | n_gen =   6386, tg =  39.50 t/s, tg_3s =  21.49 t/s
+[2026-10-03T13:53:08.565Z] 42.18.429.296 I slot print_timing: id  0 | task 23923 | n_gen =   6469, tg =  39.27 t/s, tg_3s =  27.35 t/s
+[2026-10-03T13:53:11.596Z] 42.21.460.637 I slot print_timing: id  0 | task 23923 | n_gen =   6573, tg =  39.18 t/s, tg_3s =  34.31 t/s
+[2026-10-03T13:53:14.657Z] 42.24.521.250 I slot print_timing: id  0 | task 23923 | n_gen =   6666, tg =  39.03 t/s, tg_3s =  30.39 t/s
+[2026-10-03T13:53:17.687Z] 42.27.550.940 I slot print_timing: id  0 | task 23923 | n_gen =   6758, tg =  38.88 t/s, tg_3s =  30.37 t/s
+[2026-10-03T13:53:20.743Z] 42.30.607.896 I slot print_timing: id  0 | task 23923 | n_gen =   6865, tg =  38.81 t/s, tg_3s =  35.00 t/s
+[2026-10-03T13:53:23.883Z] 42.33.747.112 I slot print_timing: id  0 | task 23923 | n_gen =   6997, tg =  38.87 t/s, tg_3s =  42.05 t/s
+[2026-10-03T13:53:26.938Z] 42.36.802.855 I slot print_timing: id  0 | task 23923 | n_gen =   7095, tg =  38.75 t/s, tg_3s =  32.07 t/s
+[2026-10-03T13:53:29.984Z] 42.39.848.493 I slot print_timing: id  0 | task 23923 | n_gen =   7177, tg =  38.56 t/s, tg_3s =  26.92 t/s
+[2026-10-03T13:53:33.030Z] 42.42.894.357 I slot print_timing: id  0 | task 23923 | n_gen =   7274, tg =  38.45 t/s, tg_3s =  31.85 t/s
+[2026-10-03T13:53:36.034Z] 42.45.898.790 I slot print_timing: id  0 | task 23923 | n_gen =   7361, tg =  38.30 t/s, tg_3s =  28.96 t/s
+[2026-10-03T13:53:39.062Z] 42.48.926.412 I slot print_timing: id  0 | task 23923 | n_gen =   7462, tg =  38.22 t/s, tg_3s =  33.36 t/s
+[2026-10-03T13:53:42.328Z] 42.52.192.499 I slot print_timing: id  0 | task 23923 | n_gen =   7608, tg =  38.33 t/s, tg_3s =  44.70 t/s
+[2026-10-03T13:53:45.389Z] 42.55.253.791 I slot print_timing: id  0 | task 23923 | n_gen =   7732, tg =  38.36 t/s, tg_3s =  40.51 t/s
+[2026-10-03T13:53:48.109Z] 42.57.973.937 I slot print_timing: id  0 | task 23923 | prompt eval time =  155266.62 ms / 97210 tokens (    1.60 ms per token,   626.08 tokens per second)
+[2026-10-03T13:53:48.109Z] 42.57.973.940 I slot print_timing: id  0 | task 23923 |        eval time =  204233.83 ms /  7805 tokens (   26.17 ms per token,    38.21 tokens per second)
+[2026-10-03T13:53:48.110Z] 42.57.973.940 I slot print_timing: id  0 | task 23923 |       total time =  359500.45 ms / 105015 tokens
+[2026-10-03T13:53:48.110Z] 42.57.973.941 I slot print_timing: id  0 | task 23923 |    graphs reused =       5841
+[2026-10-03T13:53:48.110Z] 42.57.973.960 I slot print_timing: id  0 | task 23923 | draft acceptance = 0.76586 ( 5675 accepted /  7410 generated), mean len =  4.49
+[2026-10-03T13:53:48.110Z] 42.57.973.961 I slot print_timing: id  0 | task 23923 |      acc per pos = (0.969, 0.754, 0.627, 0.490, 0.403, 0.011, 0.011, 0.010, 0.010, 0.009, 0.008, 0.008, 0.008, 0.008, 0.008, 0.008, 0.007, 0.007, 0.007, 0.007, 0.006, 0.006, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.005, 0.004, 0.004, 0.004, 0.003, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.002, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001)
+[2026-10-03T13:53:48.110Z] 42.57.973.981 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   60  16666    317, #gen drafts =    317, #acc drafts =   317, #gen tokens =  20142, #acc tokens =  6210, #mean acc len = 20.59, #acc rate/pos = (1.000, 0.915, 0.830, 0.760, 0.726, 0.678, 0.631, 0.599, 0.571, 0.555, 0.527, 0.508, 0.473, 0.445, 0.429, 0.410, 0.401, 0.379, 0.366, 0.363, 0.344, 0.322, 0.319, 0.300, 0.293, 0.284, 0.274, 0.265, 0.262, 0.259, 0.237, 0.227, 0.218, 0.215, 0.208, 0.199, 0.192, 0.189, 0.183, 0.183, 0.167, 0.167, 0.158, 0.151, 0.145, 0.139, 0.136, 0.132, 0.129, 0.129, 0.129, 0.129, 0.129, 0.120, 0.120, 0.114, 0.114, 0.114, 0.107, 0.107, 0.107, 0.107, 0.101, 0.101), dur(b,g,a) = 207.151, 68.260, 11.225 ms
+[2026-10-03T13:53:48.110Z] 42.57.973.987 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   60  16349  11027, #gen drafts =  11027, #acc drafts = 10748, #gen tokens =  34819, #acc tokens = 32592, #mean acc len = 3.96, #acc rate/pos = (0.975, 0.698, 0.531, 0.415, 0.337), dur(b,g,a) = 0.057, 148600.577, 10.084 ms
+[2026-10-03T13:53:48.111Z] 42.57.976.155 I slot      release: id  0 | task 23923 | stop processing: n_tokens = 105015, truncated = 0
+[2026-10-03T13:53:48.224Z] 42.58.088.790 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:53:48.258Z] 42.58.122.408 I srv    operator(): chat format: peg-native
+[2026-10-03T13:53:48.260Z] 42.58.125.086 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.362 (9981/27582) > 0.100
+[2026-10-03T13:53:48.260Z] 42.58.125.089 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.362 (> 0.100 thold), f_keep = 0.095
+[2026-10-03T13:53:48.260Z] 42.58.125.090 I srv  get_availabl: updating prompt cache
+[2026-10-03T13:53:48.265Z] 42.58.129.697 I srv   prompt_save:  - saving prompt with length 105015, total state size = 2410.615 MiB (draft: 412.618 MiB)
+[2026-10-03T13:53:49.689Z] 42.59.553.857 W srv          stop: cancel task, id_task = 27547
+[2026-10-03T13:53:50.189Z] 43.00.054.066 W srv          stop: cancel task, id_task = 27548
+[2026-10-03T13:53:50.411Z] 43.00.275.548 I srv          load:  - looking for better prompt, base f_keep = 0.095, f_sim = 0.362
+[2026-10-03T13:53:50.411Z] 43.00.275.557 I srv          load:    - prompt with length   95035, lcp =   16336, f_keep = 0.172, f_sim = 0.592
+[2026-10-03T13:53:50.411Z] 43.00.275.561 I srv          load:    - prompt with length  103441, lcp =    9981, f_keep = 0.096, f_sim = 0.362
+[2026-10-03T13:53:50.411Z] 43.00.275.566 I srv          load:    - prompt with length   95010, lcp =   16336, f_keep = 0.172, f_sim = 0.592
+[2026-10-03T13:53:50.411Z] 43.00.275.569 I srv          load:    - prompt with length  105015, lcp =    9981, f_keep = 0.095, f_sim = 0.362
+[2026-10-03T13:53:50.411Z] 43.00.275.578 I srv        update:  - cache state: 4 prompts, 30387.145 MiB (limits: 32768.000 MiB, 124160 tokens, 429723 est)
+[2026-10-03T13:53:50.411Z] 43.00.275.579 I srv        update:    - prompt 0x567694184d20:   95035 tokens, checkpoints:  6,  5006.328 MiB
+[2026-10-03T13:53:50.411Z] 43.00.275.579 I srv        update:    - prompt 0x5676958c90f0:  103441 tokens, checkpoints:  5,  4689.437 MiB
+[2026-10-03T13:53:50.411Z] 43.00.275.580 I srv        update:    - prompt 0x567694a5d850:   95010 tokens, checkpoints: 31, 15833.898 MiB
+[2026-10-03T13:53:50.411Z] 43.00.275.580 I srv        update:    - prompt 0x567693fac020:  105015 tokens, checkpoints:  6,  4857.482 MiB
+[2026-10-03T13:53:50.411Z] 43.00.275.581 I srv  get_availabl: prompt cache update took 2150.49 ms
+[2026-10-03T13:53:50.412Z] 43.00.276.227 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:53:50.412Z] 43.00.276.302 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:53:50.412Z] 43.00.276.306 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:53:50.412Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:53:50.412Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:53:50.412Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:53:50.412Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:53:50.412Z] 43.00.276.311 I slot launch_slot_: id  0 | task 27546 | processing task, is_child = 0
+[2026-10-03T13:53:50.412Z] 43.00.276.363 I slot   operator(): id  0 | task 27546 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 27582
+[2026-10-03T13:53:50.412Z] 43.00.276.370 I slot   operator(): id  0 | task 27546 | checking checkpoint with [97205, 97205] against 9981...
+[2026-10-03T13:53:50.412Z] 43.00.276.373 I slot   operator(): id  0 | task 27546 | checking checkpoint with [96981, 96981] against 9981...
+[2026-10-03T13:53:50.412Z] 43.00.276.373 I slot   operator(): id  0 | task 27546 | checking checkpoint with [94951, 94951] against 9981...
+[2026-10-03T13:53:50.412Z] 43.00.276.374 I slot   operator(): id  0 | task 27546 | checking checkpoint with [62474, 62474] against 9981...
+[2026-10-03T13:53:50.412Z] 43.00.276.374 I slot   operator(): id  0 | task 27546 | checking checkpoint with [26386, 26386] against 9981...
+[2026-10-03T13:53:50.412Z] 43.00.276.374 I slot   operator(): id  0 | task 27546 | checking checkpoint with [16259, 16259] against 9981...
+[2026-10-03T13:53:50.412Z] 43.00.276.375 I slot   operator(): id  0 | task 27546 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory, see https://github.com/ggml-org/llama.cpp/pull/13194#issuecomment-2868343055)
+[2026-10-03T13:53:50.412Z] 43.00.276.376 I slot   operator(): id  0 | task 27546 | erased invalidated context checkpoint (pos_min = 16259, pos_max = 16259, n_tokens = 16260, n_swa = 0, pos_next = 0, size = 213.514 MiB)
+[2026-10-03T13:53:50.423Z] 43.00.287.846 I slot   operator(): id  0 | task 27546 | erased invalidated context checkpoint (pos_min = 26386, pos_max = 26386, n_tokens = 26387, n_swa = 0, pos_next = 0, size = 253.304 MiB)
+[2026-10-03T13:53:50.437Z] 43.00.301.724 I slot   operator(): id  0 | task 27546 | erased invalidated context checkpoint (pos_min = 62474, pos_max = 62474, n_tokens = 62475, n_swa = 0, pos_next = 0, size = 395.099 MiB)
+[2026-10-03T13:53:50.463Z] 43.00.327.238 I slot   operator(): id  0 | task 27546 | erased invalidated context checkpoint (pos_min = 94951, pos_max = 94951, n_tokens = 94952, n_swa = 0, pos_next = 0, size = 522.706 MiB)
+[2026-10-03T13:53:50.496Z] 43.00.360.974 I slot   operator(): id  0 | task 27546 | erased invalidated context checkpoint (pos_min = 96981, pos_max = 96981, n_tokens = 96982, n_swa = 0, pos_next = 0, size = 530.682 MiB)
+[2026-10-03T13:53:50.529Z] 43.00.393.036 I slot   operator(): id  0 | task 27546 | erased invalidated context checkpoint (pos_min = 97205, pos_max = 97205, n_tokens = 97206, n_swa = 0, pos_next = 0, size = 531.562 MiB)
+[2026-10-03T13:53:50.560Z] 43.00.424.792 I slot   operator(): id  0 | task 27546 | cached n_tokens = 0, memory_seq_rm [0, end)
+[2026-10-03T13:53:55.178Z] 43.05.042.615 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =   4480, progress = 0.16, t =   4.54 s / 987.48 tokens per second
+[2026-10-03T13:53:55.178Z] 43.05.042.618 I slot   operator(): id  0 | task 27546 | cached n_tokens = 4480, memory_seq_rm [4480, end)
+[2026-10-03T13:53:59.989Z] 43.09.853.224 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =   8960, progress = 0.32, t =   9.19 s / 974.59 tokens per second
+[2026-10-03T13:53:59.989Z] 43.09.853.227 I slot   operator(): id  0 | task 27546 | cached n_tokens = 8960, memory_seq_rm [8960, end)
+[2026-10-03T13:54:05.064Z] 43.14.928.917 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =  13440, progress = 0.49, t =  14.40 s / 933.30 tokens per second
+[2026-10-03T13:54:05.064Z] 43.14.928.921 I slot   operator(): id  0 | task 27546 | cached n_tokens = 13440, memory_seq_rm [13440, end)
+[2026-10-03T13:54:08.466Z] 43.18.330.920 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =  16319, progress = 0.59, t =  17.86 s / 913.78 tokens per second
+[2026-10-03T13:54:08.466Z] 43.18.330.923 I slot   operator(): id  0 | task 27546 | cached n_tokens = 16319, memory_seq_rm [16319, end)
+[2026-10-03T13:54:08.564Z] 43.18.428.481 I slot create_check: id  0 | task 27546 | created context checkpoint 1 of 32 (pos_min = 16318, pos_max = 16318, n_tokens = 16319, size = 213.746 MiB)
+[2026-10-03T13:54:14.046Z] 43.23.910.750 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =  20799, progress = 0.75, t =  23.34 s / 891.19 tokens per second
+[2026-10-03T13:54:14.046Z] 43.23.910.753 I slot   operator(): id  0 | task 27546 | cached n_tokens = 20799, memory_seq_rm [20799, end)
+[2026-10-03T13:54:19.762Z] 43.29.626.351 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =  25279, progress = 0.92, t =  29.05 s / 870.31 tokens per second
+[2026-10-03T13:54:19.762Z] 43.29.626.354 I slot   operator(): id  0 | task 27546 | cached n_tokens = 25279, memory_seq_rm [25279, end)
+[2026-10-03T13:54:22.513Z] 43.32.377.817 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =  27354, progress = 0.99, t =  31.96 s / 855.93 tokens per second
+[2026-10-03T13:54:22.513Z] 43.32.377.820 I slot   operator(): id  0 | task 27546 | cached n_tokens = 27354, memory_seq_rm [27354, end)
+[2026-10-03T13:54:22.629Z] 43.32.493.675 I slot create_check: id  0 | task 27546 | created context checkpoint 2 of 32 (pos_min = 27353, pos_max = 27353, n_tokens = 27354, size = 257.104 MiB)
+[2026-10-03T13:54:22.923Z] 43.32.787.900 I slot print_timing: id  0 | task 27546 | prompt processing, n_tokens =  27578, progress = 1.00, t =  32.40 s / 851.10 tokens per second
+[2026-10-03T13:54:22.923Z] 43.32.787.903 I slot   operator(): id  0 | task 27546 | cached n_tokens = 27578, memory_seq_rm [27578, end)
+[2026-10-03T13:54:22.926Z] 43.32.790.728 I slot init_sampler: id  0 | task 27546 | init sampler, took 2.70 ms, tokens: text = 27582, total = 27582
+[2026-10-03T13:54:23.042Z] 43.32.906.185 I slot create_check: id  0 | task 27546 | created context checkpoint 3 of 32 (pos_min = 27577, pos_max = 27577, n_tokens = 27578, size = 257.984 MiB)
+[2026-10-03T13:54:23.094Z] 43.32.959.132 I spec        begin: ngram_mod occupancy = 93086/4194304 (0.02)
+[2026-10-03T13:54:26.144Z] 43.36.008.143 I slot print_timing: id  0 | task 27546 | n_gen =    109, tg =  35.43 t/s, tg_3s =  35.75 t/s
+[2026-10-03T13:54:29.178Z] 43.39.042.487 I slot print_timing: id  0 | task 27546 | n_gen =    227, tg =  37.15 t/s, tg_3s =  38.89 t/s
+[2026-10-03T13:54:31.508Z] 43.41.372.048 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:54:32.277Z] 43.42.141.761 I slot print_timing: id  0 | task 27546 | n_gen =    400, tg =  43.45 t/s, tg_3s =  55.82 t/s
+[2026-10-03T13:54:32.425Z] 43.42.289.355 I slot print_timing: id  0 | task 27546 | prompt eval time =   32683.19 ms / 27582 tokens (    1.18 ms per token,   843.92 tokens per second)
+[2026-10-03T13:54:32.425Z] 43.42.289.358 I slot print_timing: id  0 | task 27546 |        eval time =    9329.67 ms /   409 tokens (   22.87 ms per token,    43.73 tokens per second)
+[2026-10-03T13:54:32.425Z] 43.42.289.358 I slot print_timing: id  0 | task 27546 |       total time =   42012.86 ms / 27991 tokens
+[2026-10-03T13:54:32.425Z] 43.42.289.359 I slot print_timing: id  0 | task 27546 |    graphs reused =       5917
+[2026-10-03T13:54:32.425Z] 43.42.289.372 I slot print_timing: id  0 | task 27546 | draft acceptance = 0.73333 (  242 accepted /   330 generated), mean len =  3.88
+[2026-10-03T13:54:32.425Z] 43.42.289.373 I slot print_timing: id  0 | task 27546 |      acc per pos = (0.988, 0.524, 0.393, 0.310, 0.202, 0.024, 0.024, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:54:32.425Z] 43.42.289.392 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   61  16830    319, #gen drafts =    319, #acc drafts =   319, #gen tokens =  20270, #acc tokens =  6261, #mean acc len = 20.63, #acc rate/pos = (1.000, 0.915, 0.831, 0.762, 0.727, 0.680, 0.633, 0.602, 0.571, 0.555, 0.527, 0.508, 0.473, 0.445, 0.429, 0.411, 0.401, 0.379, 0.367, 0.364, 0.345, 0.323, 0.320, 0.301, 0.295, 0.285, 0.276, 0.266, 0.263, 0.260, 0.238, 0.229, 0.219, 0.216, 0.210, 0.201, 0.194, 0.191, 0.185, 0.185, 0.169, 0.169, 0.160, 0.150, 0.144, 0.138, 0.135, 0.132, 0.129, 0.129, 0.129, 0.129, 0.129, 0.119, 0.119, 0.113, 0.113, 0.113, 0.107, 0.107, 0.107, 0.107, 0.100, 0.100), dur(b,g,a) = 208.662, 68.505, 11.226 ms
+[2026-10-03T13:54:32.425Z] 43.42.289.395 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   61  16511  11109, #gen drafts =  11109, #acc drafts = 10829, #gen tokens =  35021, #acc tokens = 32785, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.696, 0.530, 0.414, 0.336), dur(b,g,a) = 0.058, 149550.546, 10.148 ms
+[2026-10-03T13:54:32.426Z] 43.42.290.242 I slot      release: id  0 | task 27546 | stop processing: n_tokens = 27990, truncated = 0
+[2026-10-03T13:54:32.489Z] 43.42.353.973 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:54:32.523Z] 43.42.387.922 I srv    operator(): chat format: peg-native
+[2026-10-03T13:54:32.526Z] 43.42.390.540 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.991 (27990/28258) > 0.100
+[2026-10-03T13:54:32.526Z] 43.42.390.543 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.991 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:54:32.527Z] 43.42.391.277 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:54:32.527Z] 43.42.391.349 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:54:32.527Z] 43.42.391.354 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:54:32.527Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:54:32.527Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:54:32.527Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:54:32.527Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:54:32.527Z] 43.42.391.371 I slot launch_slot_: id  0 | task 27897 | processing task, is_child = 0
+[2026-10-03T13:54:32.527Z] 43.42.391.377 I slot   operator(): id  0 | task 27897 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 28258
+[2026-10-03T13:54:32.527Z] 43.42.391.392 I slot   operator(): id  0 | task 27897 | cached n_tokens = 27990, memory_seq_rm [27990, end)
+[2026-10-03T13:54:32.621Z] 43.42.485.585 I slot   operator(): id  0 | task 27897 | cached n_tokens = 28030, memory_seq_rm [28030, end)
+[2026-10-03T13:54:32.737Z] 43.42.601.937 I slot create_check: id  0 | task 27897 | created context checkpoint 4 of 32 (pos_min = 28029, pos_max = 28029, n_tokens = 28030, size = 259.760 MiB)
+[2026-10-03T13:54:33.033Z] 43.42.897.007 I slot   operator(): id  0 | task 27897 | cached n_tokens = 28254, memory_seq_rm [28254, end)
+[2026-10-03T13:54:33.035Z] 43.42.899.904 I slot init_sampler: id  0 | task 27897 | init sampler, took 2.77 ms, tokens: text = 28258, total = 28258
+[2026-10-03T13:54:33.152Z] 43.43.016.272 I slot create_check: id  0 | task 27897 | created context checkpoint 5 of 32 (pos_min = 28253, pos_max = 28253, n_tokens = 28254, size = 260.640 MiB)
+[2026-10-03T13:54:33.204Z] 43.43.069.048 I spec        begin: ngram_mod occupancy = 93612/4194304 (0.02)
+[2026-10-03T13:54:36.235Z] 43.46.099.897 I slot print_timing: id  0 | task 27897 | n_gen =    150, tg =  49.17 t/s, tg_3s =  49.50 t/s
+[2026-10-03T13:54:36.935Z] 43.46.799.480 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:54:39.240Z] 43.49.104.858 I slot print_timing: id  0 | task 27897 | prompt eval time =     678.02 ms /   268 tokens (    2.53 ms per token,   395.27 tokens per second)
+[2026-10-03T13:54:39.240Z] 43.49.104.860 I slot print_timing: id  0 | task 27897 |        eval time =    6035.32 ms /   356 tokens (   17.00 ms per token,    58.82 tokens per second)
+[2026-10-03T13:54:39.240Z] 43.49.104.861 I slot print_timing: id  0 | task 27897 |       total time =    6713.34 ms /   624 tokens
+[2026-10-03T13:54:39.240Z] 43.49.104.861 I slot print_timing: id  0 | task 27897 |    graphs reused =       5950
+[2026-10-03T13:54:39.240Z] 43.49.104.875 I slot print_timing: id  0 | task 27897 | draft acceptance = 0.60648 (  262 accepted /   432 generated), mean len =  5.44
+[2026-10-03T13:54:39.240Z] 43.49.104.876 I slot print_timing: id  0 | task 27897 |      acc per pos = (0.966, 0.746, 0.576, 0.525, 0.458, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.051, 0.034, 0.034, 0.034, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.017, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:54:39.240Z] 43.49.104.895 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   62  16919    323, #gen drafts =    323, #acc drafts =   323, #gen tokens =  20515, #acc tokens =  6349, #mean acc len = 20.66, #acc rate/pos = (1.000, 0.913, 0.830, 0.762, 0.728, 0.681, 0.635, 0.604, 0.573, 0.557, 0.529, 0.511, 0.477, 0.449, 0.433, 0.415, 0.406, 0.384, 0.372, 0.368, 0.350, 0.328, 0.325, 0.307, 0.297, 0.288, 0.279, 0.266, 0.263, 0.260, 0.238, 0.229, 0.220, 0.217, 0.211, 0.201, 0.192, 0.189, 0.183, 0.183, 0.167, 0.167, 0.158, 0.149, 0.142, 0.136, 0.133, 0.130, 0.127, 0.127, 0.127, 0.127, 0.127, 0.118, 0.118, 0.111, 0.111, 0.111, 0.105, 0.105, 0.105, 0.105, 0.099, 0.099), dur(b,g,a) = 210.242, 68.689, 11.228 ms
+[2026-10-03T13:54:39.240Z] 43.49.104.901 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   62  16596  11164, #gen drafts =  11164, #acc drafts = 10883, #gen tokens =  35208, #acc tokens = 32963, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.697, 0.530, 0.414, 0.337), dur(b,g,a) = 0.058, 150209.003, 10.197 ms
+[2026-10-03T13:54:39.241Z] 43.49.105.740 I slot      release: id  0 | task 27897 | stop processing: n_tokens = 28613, truncated = 0
+[2026-10-03T13:54:40.405Z] 43.50.270.029 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:54:40.438Z] 43.50.302.922 I srv    operator(): chat format: peg-native
+[2026-10-03T13:54:40.441Z] 43.50.305.546 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.999 (28613/28632) > 0.100
+[2026-10-03T13:54:40.441Z] 43.50.305.550 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.999 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:54:40.442Z] 43.50.306.244 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:54:40.442Z] 43.50.306.319 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:54:40.442Z] 43.50.306.323 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:54:40.442Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:54:40.442Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:54:40.442Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:54:40.442Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:54:40.442Z] 43.50.306.329 I slot launch_slot_: id  0 | task 28026 | processing task, is_child = 0
+[2026-10-03T13:54:40.442Z] 43.50.306.336 I slot   operator(): id  0 | task 28026 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 28632
+[2026-10-03T13:54:40.442Z] 43.50.306.350 I slot   operator(): id  0 | task 28026 | cached n_tokens = 28613, memory_seq_rm [28613, end)
+[2026-10-03T13:54:40.558Z] 43.50.422.822 I slot create_check: id  0 | task 28026 | created context checkpoint 6 of 32 (pos_min = 28612, pos_max = 28612, n_tokens = 28613, size = 262.051 MiB)
+[2026-10-03T13:54:40.622Z] 43.50.486.335 I slot   operator(): id  0 | task 28026 | cached n_tokens = 28628, memory_seq_rm [28628, end)
+[2026-10-03T13:54:40.625Z] 43.50.489.261 I slot init_sampler: id  0 | task 28026 | init sampler, took 2.81 ms, tokens: text = 28632, total = 28632
+[2026-10-03T13:54:40.740Z] 43.50.604.916 I slot create_check: id  0 | task 28026 | created context checkpoint 7 of 32 (pos_min = 28627, pos_max = 28627, n_tokens = 28628, size = 262.110 MiB)
+[2026-10-03T13:54:40.793Z] 43.50.657.775 I spec        begin: ngram_mod occupancy = 93869/4194304 (0.02)
+[2026-10-03T13:54:41.404Z] 43.51.268.140 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:54:43.706Z] 43.53.570.053 I slot print_timing: id  0 | task 28026 | prompt eval time =     351.88 ms /    19 tokens (   18.52 ms per token,    54.00 tokens per second)
+[2026-10-03T13:54:43.706Z] 43.53.570.056 I slot print_timing: id  0 | task 28026 |        eval time =    2911.70 ms /   213 tokens (   13.73 ms per token,    72.81 tokens per second)
+[2026-10-03T13:54:43.706Z] 43.53.570.057 I slot print_timing: id  0 | task 28026 |       total time =    3263.58 ms /   232 tokens
+[2026-10-03T13:54:43.706Z] 43.53.570.057 I slot print_timing: id  0 | task 28026 |    graphs reused =       5961
+[2026-10-03T13:54:43.706Z] 43.53.570.071 I slot print_timing: id  0 | task 28026 | draft acceptance = 0.50733 (  173 accepted /   341 generated), mean len =  7.18
+[2026-10-03T13:54:43.706Z] 43.53.570.072 I slot print_timing: id  0 | task 28026 |      acc per pos = (1.000, 0.786, 0.679, 0.571, 0.500, 0.107, 0.107, 0.107, 0.107, 0.107, 0.107, 0.071, 0.071, 0.071, 0.071, 0.071, 0.071, 0.071, 0.071, 0.071, 0.071, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.036, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:54:43.706Z] 43.53.570.088 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   63  16954    327, #gen drafts =    327, #acc drafts =   327, #gen tokens =  20771, #acc tokens =  6445, #mean acc len = 20.71, #acc rate/pos = (1.000, 0.914, 0.832, 0.765, 0.728, 0.682, 0.636, 0.606, 0.575, 0.560, 0.532, 0.514, 0.477, 0.450, 0.434, 0.416, 0.407, 0.385, 0.373, 0.370, 0.352, 0.330, 0.324, 0.306, 0.297, 0.287, 0.278, 0.266, 0.263, 0.260, 0.239, 0.229, 0.220, 0.217, 0.211, 0.202, 0.193, 0.190, 0.183, 0.183, 0.168, 0.168, 0.159, 0.150, 0.144, 0.138, 0.135, 0.131, 0.128, 0.128, 0.128, 0.128, 0.128, 0.119, 0.119, 0.113, 0.113, 0.113, 0.104, 0.104, 0.104, 0.104, 0.098, 0.098), dur(b,g,a) = 211.796, 68.795, 11.231 ms
+[2026-10-03T13:54:43.706Z] 43.53.570.092 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   63  16627  11188, #gen drafts =  11188, #acc drafts = 10907, #gen tokens =  35293, #acc tokens = 33044, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.697, 0.530, 0.415, 0.337), dur(b,g,a) = 0.059, 150482.093, 10.217 ms
+[2026-10-03T13:54:43.706Z] 43.53.570.947 I slot      release: id  0 | task 28026 | stop processing: n_tokens = 28844, truncated = 0
+[2026-10-03T13:54:45.622Z] 43.55.486.309 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:54:45.656Z] 43.55.520.965 I srv    operator(): chat format: peg-native
+[2026-10-03T13:54:45.659Z] 43.55.523.571 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.996 (28844/28969) > 0.100
+[2026-10-03T13:54:45.659Z] 43.55.523.573 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.996 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:54:45.659Z] 43.55.524.168 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:54:45.660Z] 43.55.524.238 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:54:45.660Z] 43.55.524.242 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:54:45.660Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:54:45.660Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:54:45.660Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:54:45.660Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:54:45.660Z] 43.55.524.249 I slot launch_slot_: id  0 | task 28088 | processing task, is_child = 0
+[2026-10-03T13:54:45.660Z] 43.55.524.254 I slot   operator(): id  0 | task 28088 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 28969
+[2026-10-03T13:54:45.674Z] 43.55.524.268 I slot   operator(): id  0 | task 28088 | cached n_tokens = 28844, memory_seq_rm [28844, end)
+[2026-10-03T13:54:45.778Z] 43.55.642.736 I slot create_check: id  0 | task 28088 | created context checkpoint 8 of 32 (pos_min = 28843, pos_max = 28843, n_tokens = 28844, size = 262.958 MiB)
+[2026-10-03T13:54:45.949Z] 43.55.813.266 I slot   operator(): id  0 | task 28088 | cached n_tokens = 28965, memory_seq_rm [28965, end)
+[2026-10-03T13:54:45.952Z] 43.55.816.222 I slot init_sampler: id  0 | task 28088 | init sampler, took 2.83 ms, tokens: text = 28969, total = 28969
+[2026-10-03T13:54:46.069Z] 43.55.933.334 I slot create_check: id  0 | task 28088 | created context checkpoint 9 of 32 (pos_min = 28964, pos_max = 28964, n_tokens = 28965, size = 263.434 MiB)
+[2026-10-03T13:54:46.122Z] 43.55.986.600 I spec        begin: ngram_mod occupancy = 94052/4194304 (0.02)
+[2026-10-03T13:54:49.168Z] 43.59.032.125 I slot print_timing: id  0 | task 28088 | n_gen =    138, tg =  44.99 t/s, tg_3s =  45.32 t/s
+[2026-10-03T13:54:52.173Z] 44.02.037.111 I slot print_timing: id  0 | task 28088 | n_gen =    238, tg =  39.17 t/s, tg_3s =  33.28 t/s
+[2026-10-03T13:54:55.188Z] 44.05.052.102 I slot print_timing: id  0 | task 28088 | n_gen =    329, tg =  36.18 t/s, tg_3s =  30.18 t/s
+[2026-10-03T13:54:58.191Z] 44.08.055.316 I slot print_timing: id  0 | task 28088 | n_gen =    417, tg =  34.47 t/s, tg_3s =  29.30 t/s
+[2026-10-03T13:54:59.494Z] 44.09.358.297 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:55:01.192Z] 44.11.056.380 I slot print_timing: id  0 | task 28088 | n_gen =    567, tg =  37.56 t/s, tg_3s =  49.98 t/s
+[2026-10-03T13:55:02.907Z] 44.12.771.487 I slot print_timing: id  0 | task 28088 | prompt eval time =     462.81 ms /   125 tokens (    3.70 ms per token,   270.09 tokens per second)
+[2026-10-03T13:55:02.907Z] 44.12.771.490 I slot print_timing: id  0 | task 28088 |        eval time =   16784.29 ms /   674 tokens (   24.94 ms per token,    40.10 tokens per second)
+[2026-10-03T13:55:02.908Z] 44.12.771.490 I slot print_timing: id  0 | task 28088 |       total time =   17247.10 ms /   799 tokens
+[2026-10-03T13:55:02.908Z] 44.12.771.491 I slot print_timing: id  0 | task 28088 |    graphs reused =       6078
+[2026-10-03T13:55:02.908Z] 44.12.771.503 I slot print_timing: id  0 | task 28088 | draft acceptance = 0.83221 (  372 accepted /   447 generated), mean len =  3.48
+[2026-10-03T13:55:02.908Z] 44.12.771.503 I slot print_timing: id  0 | task 28088 |      acc per pos = (0.973, 0.560, 0.427, 0.313, 0.207, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:55:02.908Z] 44.12.771.523 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   64  17254    328, #gen drafts =    328, #acc drafts =   328, #gen tokens =  20835, #acc tokens =  6451, #mean acc len = 20.67, #acc rate/pos = (1.000, 0.915, 0.832, 0.765, 0.729, 0.683, 0.634, 0.604, 0.573, 0.558, 0.530, 0.512, 0.476, 0.448, 0.433, 0.415, 0.405, 0.384, 0.372, 0.369, 0.351, 0.329, 0.323, 0.305, 0.296, 0.287, 0.277, 0.265, 0.262, 0.259, 0.238, 0.229, 0.220, 0.216, 0.210, 0.201, 0.192, 0.189, 0.183, 0.183, 0.168, 0.168, 0.159, 0.149, 0.143, 0.137, 0.134, 0.131, 0.128, 0.128, 0.128, 0.128, 0.128, 0.119, 0.119, 0.113, 0.113, 0.113, 0.104, 0.104, 0.104, 0.104, 0.098, 0.098), dur(b,g,a) = 213.376, 69.198, 11.231 ms
+[2026-10-03T13:55:02.908Z] 44.12.771.528 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   64  16926  11337, #gen drafts =  11337, #acc drafts = 11052, #gen tokens =  35676, #acc tokens = 33411, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.695, 0.529, 0.413, 0.335), dur(b,g,a) = 0.060, 152263.153, 10.347 ms
+[2026-10-03T13:55:02.908Z] 44.12.772.397 I slot      release: id  0 | task 28088 | stop processing: n_tokens = 29642, truncated = 0
+[2026-10-03T13:55:03.258Z] 44.13.122.321 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:55:03.292Z] 44.13.156.690 I srv    operator(): chat format: peg-native
+[2026-10-03T13:55:03.295Z] 44.13.159.474 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.994 (29642/29831) > 0.100
+[2026-10-03T13:55:03.295Z] 44.13.159.477 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.994 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:55:03.295Z] 44.13.160.172 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:55:03.296Z] 44.13.160.258 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:55:03.296Z] 44.13.160.265 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:55:03.296Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:55:03.296Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:55:03.296Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:55:03.296Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:55:03.296Z] 44.13.160.283 I slot launch_slot_: id  0 | task 28462 | processing task, is_child = 0
+[2026-10-03T13:55:03.296Z] 44.13.160.290 I slot   operator(): id  0 | task 28462 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 29831
+[2026-10-03T13:55:03.296Z] 44.13.160.316 I slot   operator(): id  0 | task 28462 | cached n_tokens = 29642, memory_seq_rm [29642, end)
+[2026-10-03T13:55:03.414Z] 44.13.278.451 I slot create_check: id  0 | task 28462 | created context checkpoint 10 of 32 (pos_min = 29641, pos_max = 29641, n_tokens = 29642, size = 266.094 MiB)
+[2026-10-03T13:55:03.672Z] 44.13.536.909 I slot   operator(): id  0 | task 28462 | cached n_tokens = 29827, memory_seq_rm [29827, end)
+[2026-10-03T13:55:03.675Z] 44.13.539.964 I slot init_sampler: id  0 | task 28462 | init sampler, took 2.92 ms, tokens: text = 29831, total = 29831
+[2026-10-03T13:55:03.793Z] 44.13.657.737 I slot create_check: id  0 | task 28462 | created context checkpoint 11 of 32 (pos_min = 29826, pos_max = 29826, n_tokens = 29827, size = 266.821 MiB)
+[2026-10-03T13:55:03.847Z] 44.13.711.558 I spec        begin: ngram_mod occupancy = 94882/4194304 (0.02)
+[2026-10-03T13:55:06.879Z] 44.16.743.507 I slot print_timing: id  0 | task 28462 | n_gen =    103, tg =  33.65 t/s, tg_3s =  33.98 t/s
+[2026-10-03T13:55:07.546Z] 44.17.410.409 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:55:09.918Z] 44.19.782.686 I slot print_timing: id  0 | task 28462 | n_gen =    293, tg =  48.10 t/s, tg_3s =  62.52 t/s
+[2026-10-03T13:55:11.060Z] 44.20.924.914 I slot print_timing: id  0 | task 28462 | prompt eval time =     551.71 ms /   189 tokens (    2.92 ms per token,   342.57 tokens per second)
+[2026-10-03T13:55:11.061Z] 44.20.924.917 I slot print_timing: id  0 | task 28462 |        eval time =    7212.78 ms /   359 tokens (   20.15 ms per token,    49.63 tokens per second)
+[2026-10-03T13:55:11.061Z] 44.20.924.918 I slot print_timing: id  0 | task 28462 |       total time =    7764.49 ms /   548 tokens
+[2026-10-03T13:55:11.061Z] 44.20.924.918 I slot print_timing: id  0 | task 28462 |    graphs reused =       6118
+[2026-10-03T13:55:11.061Z] 44.20.924.931 I slot print_timing: id  0 | task 28462 | draft acceptance = 0.48228 (  245 accepted /   508 generated), mean len =  4.66
+[2026-10-03T13:55:11.061Z] 44.20.924.932 I slot print_timing: id  0 | task 28462 |      acc per pos = (0.985, 0.731, 0.552, 0.433, 0.403, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.030, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.015, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:55:11.061Z] 44.20.924.952 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   65  17363    333, #gen drafts =    333, #acc drafts =   333, #gen tokens =  21142, #acc tokens =  6507, #mean acc len = 20.54, #acc rate/pos = (1.000, 0.913, 0.829, 0.763, 0.724, 0.679, 0.631, 0.601, 0.571, 0.556, 0.529, 0.511, 0.474, 0.447, 0.432, 0.414, 0.405, 0.384, 0.369, 0.366, 0.348, 0.327, 0.321, 0.303, 0.294, 0.285, 0.276, 0.264, 0.261, 0.258, 0.237, 0.225, 0.216, 0.213, 0.207, 0.198, 0.189, 0.186, 0.180, 0.180, 0.165, 0.165, 0.156, 0.147, 0.141, 0.135, 0.132, 0.129, 0.126, 0.126, 0.126, 0.126, 0.126, 0.117, 0.117, 0.111, 0.111, 0.111, 0.102, 0.102, 0.102, 0.102, 0.096, 0.096), dur(b,g,a) = 214.998, 69.402, 11.233 ms
+[2026-10-03T13:55:11.061Z] 44.20.924.959 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   65  17030  11399, #gen drafts =  11399, #acc drafts = 11114, #gen tokens =  35877, #acc tokens = 33605, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.695, 0.529, 0.413, 0.336), dur(b,g,a) = 0.061, 153017.016, 10.405 ms
+[2026-10-03T13:55:11.061Z] 44.20.925.857 I slot      release: id  0 | task 28462 | stop processing: n_tokens = 30190, truncated = 0
+[2026-10-03T13:55:11.562Z] 44.21.426.437 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:55:11.597Z] 44.21.461.963 I srv    operator(): chat format: peg-native
+[2026-10-03T13:55:11.600Z] 44.21.464.696 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.998 (30190/30254) > 0.100
+[2026-10-03T13:55:11.600Z] 44.21.464.698 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.998 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:55:11.601Z] 44.21.465.347 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:55:11.601Z] 44.21.465.418 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:55:11.601Z] 44.21.465.423 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:55:11.601Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:55:11.601Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:55:11.601Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:55:11.601Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:55:11.601Z] 44.21.465.432 I slot launch_slot_: id  0 | task 28613 | processing task, is_child = 0
+[2026-10-03T13:55:11.601Z] 44.21.465.438 I slot   operator(): id  0 | task 28613 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 30254
+[2026-10-03T13:55:11.601Z] 44.21.465.455 I slot   operator(): id  0 | task 28613 | cached n_tokens = 30190, memory_seq_rm [30190, end)
+[2026-10-03T13:55:11.721Z] 44.21.585.835 I slot create_check: id  0 | task 28613 | created context checkpoint 12 of 32 (pos_min = 30189, pos_max = 30189, n_tokens = 30190, size = 268.247 MiB)
+[2026-10-03T13:55:11.829Z] 44.21.693.326 I slot   operator(): id  0 | task 28613 | cached n_tokens = 30250, memory_seq_rm [30250, end)
+[2026-10-03T13:55:11.832Z] 44.21.696.411 I slot init_sampler: id  0 | task 28613 | init sampler, took 2.96 ms, tokens: text = 30254, total = 30254
+[2026-10-03T13:55:11.949Z] 44.21.813.648 I slot create_check: id  0 | task 28613 | created context checkpoint 13 of 32 (pos_min = 30249, pos_max = 30249, n_tokens = 30250, size = 268.483 MiB)
+[2026-10-03T13:55:12.002Z] 44.21.867.084 I spec        begin: ngram_mod occupancy = 95216/4194304 (0.02)
+[2026-10-03T13:55:15.050Z] 44.24.914.181 I slot print_timing: id  0 | task 28613 | n_gen =    114, tg =  37.09 t/s, tg_3s =  37.42 t/s
+[2026-10-03T13:55:16.321Z] 44.26.185.175 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:55:18.107Z] 44.27.971.613 I slot print_timing: id  0 | task 28613 | n_gen =    248, tg =  40.47 t/s, tg_3s =  43.83 t/s
+[2026-10-03T13:55:21.140Z] 44.31.004.490 I slot print_timing: id  0 | task 28613 | n_gen =    409, tg =  44.65 t/s, tg_3s =  53.08 t/s
+[2026-10-03T13:55:23.044Z] 44.32.908.633 I slot print_timing: id  0 | task 28613 | prompt eval time =     402.07 ms /    64 tokens (    6.28 ms per token,   159.18 tokens per second)
+[2026-10-03T13:55:23.044Z] 44.32.908.635 I slot print_timing: id  0 | task 28613 |        eval time =   11041.00 ms /   523 tokens (   21.15 ms per token,    47.28 tokens per second)
+[2026-10-03T13:55:23.044Z] 44.32.908.636 I slot print_timing: id  0 | task 28613 |       total time =   11443.07 ms /   587 tokens
+[2026-10-03T13:55:23.044Z] 44.32.908.636 I slot print_timing: id  0 | task 28613 |    graphs reused =       6172
+[2026-10-03T13:55:23.044Z] 44.32.908.649 I slot print_timing: id  0 | task 28613 | draft acceptance = 0.71190 (  341 accepted /   479 generated), mean len =  3.97
+[2026-10-03T13:55:23.044Z] 44.32.908.649 I slot print_timing: id  0 | task 28613 |      acc per pos = (0.974, 0.696, 0.487, 0.391, 0.313, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.009, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:55:23.044Z] 44.32.908.667 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   66  17542    335, #gen drafts =    335, #acc drafts =   335, #gen tokens =  21270, #acc tokens =  6531, #mean acc len = 20.50, #acc rate/pos = (1.000, 0.913, 0.830, 0.764, 0.725, 0.681, 0.630, 0.600, 0.570, 0.555, 0.528, 0.510, 0.475, 0.448, 0.433, 0.415, 0.406, 0.385, 0.367, 0.364, 0.346, 0.325, 0.319, 0.301, 0.293, 0.284, 0.275, 0.263, 0.260, 0.257, 0.236, 0.224, 0.215, 0.212, 0.206, 0.197, 0.188, 0.185, 0.179, 0.179, 0.164, 0.164, 0.155, 0.146, 0.140, 0.134, 0.131, 0.128, 0.125, 0.125, 0.125, 0.125, 0.125, 0.116, 0.116, 0.110, 0.110, 0.110, 0.101, 0.101, 0.101, 0.101, 0.096, 0.096), dur(b,g,a) = 216.627, 69.679, 11.234 ms
+[2026-10-03T13:55:23.044Z] 44.32.908.670 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   66  17207  11512, #gen drafts =  11512, #acc drafts = 11224, #gen tokens =  36228, #acc tokens = 33924, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.695, 0.529, 0.413, 0.335), dur(b,g,a) = 0.062, 154338.826, 10.506 ms
+[2026-10-03T13:55:23.045Z] 44.32.909.561 I slot      release: id  0 | task 28613 | stop processing: n_tokens = 30776, truncated = 0
+[2026-10-03T13:55:24.482Z] 44.34.346.607 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:55:24.518Z] 44.34.383.080 I srv    operator(): chat format: peg-native
+[2026-10-03T13:55:24.521Z] 44.34.385.795 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.995 (30776/30940) > 0.100
+[2026-10-03T13:55:24.521Z] 44.34.385.798 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.995 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:55:24.522Z] 44.34.386.500 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:55:24.522Z] 44.34.386.571 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:55:24.522Z] 44.34.386.577 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:55:24.522Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:55:24.522Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:55:24.522Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:55:24.522Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:55:24.522Z] 44.34.386.584 I slot launch_slot_: id  0 | task 28849 | processing task, is_child = 0
+[2026-10-03T13:55:24.522Z] 44.34.386.591 I slot   operator(): id  0 | task 28849 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 30940
+[2026-10-03T13:55:24.522Z] 44.34.386.608 I slot   operator(): id  0 | task 28849 | cached n_tokens = 30776, memory_seq_rm [30776, end)
+[2026-10-03T13:55:24.649Z] 44.34.513.104 I slot create_check: id  0 | task 28849 | created context checkpoint 14 of 32 (pos_min = 30775, pos_max = 30775, n_tokens = 30776, size = 270.549 MiB)
+[2026-10-03T13:55:24.880Z] 44.34.744.699 I slot   operator(): id  0 | task 28849 | cached n_tokens = 30936, memory_seq_rm [30936, end)
+[2026-10-03T13:55:24.883Z] 44.34.747.869 I slot init_sampler: id  0 | task 28849 | init sampler, took 3.05 ms, tokens: text = 30940, total = 30940
+[2026-10-03T13:55:25.002Z] 44.34.866.229 I slot create_check: id  0 | task 28849 | created context checkpoint 15 of 32 (pos_min = 30935, pos_max = 30935, n_tokens = 30936, size = 271.178 MiB)
+[2026-10-03T13:55:25.055Z] 44.34.920.104 I spec        begin: ngram_mod occupancy = 95760/4194304 (0.02)
+[2026-10-03T13:55:27.627Z] 44.37.491.694 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:55:28.067Z] 44.37.932.088 I slot print_timing: id  0 | task 28849 | n_gen =    133, tg =  43.83 t/s, tg_3s =  44.16 t/s
+[2026-10-03T13:55:29.024Z] 44.38.888.448 I slot print_timing: id  0 | task 28849 | prompt eval time =     533.95 ms /   164 tokens (    3.26 ms per token,   307.15 tokens per second)
+[2026-10-03T13:55:29.024Z] 44.38.888.450 I slot print_timing: id  0 | task 28849 |        eval time =    3967.78 ms /   196 tokens (   20.35 ms per token,    49.15 tokens per second)
+[2026-10-03T13:55:29.024Z] 44.38.888.451 I slot print_timing: id  0 | task 28849 |       total time =    4501.73 ms /   360 tokens
+[2026-10-03T13:55:29.024Z] 44.38.888.451 I slot print_timing: id  0 | task 28849 |    graphs reused =       6199
+[2026-10-03T13:55:29.024Z] 44.38.888.464 I slot print_timing: id  0 | task 28849 | draft acceptance = 0.54959 (  133 accepted /   242 generated), mean len =  4.33
+[2026-10-03T13:55:29.024Z] 44.38.888.465 I slot print_timing: id  0 | task 28849 |      acc per pos = (0.975, 0.750, 0.450, 0.400, 0.350, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.025, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:55:29.024Z] 44.38.888.484 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   67  17603    337, #gen drafts =    337, #acc drafts =   337, #gen tokens =  21398, #acc tokens =  6555, #mean acc len = 20.45, #acc rate/pos = (1.000, 0.914, 0.828, 0.763, 0.724, 0.680, 0.629, 0.599, 0.570, 0.555, 0.528, 0.510, 0.475, 0.448, 0.433, 0.415, 0.407, 0.386, 0.368, 0.365, 0.347, 0.326, 0.318, 0.300, 0.291, 0.282, 0.273, 0.261, 0.258, 0.255, 0.234, 0.223, 0.214, 0.211, 0.205, 0.196, 0.187, 0.184, 0.178, 0.178, 0.163, 0.163, 0.154, 0.145, 0.139, 0.134, 0.131, 0.128, 0.125, 0.125, 0.125, 0.125, 0.125, 0.116, 0.116, 0.110, 0.110, 0.110, 0.101, 0.101, 0.101, 0.101, 0.095, 0.095), dur(b,g,a) = 218.307, 69.776, 11.235 ms
+[2026-10-03T13:55:29.024Z] 44.38.888.487 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   67  17266  11550, #gen drafts =  11550, #acc drafts = 11261, #gen tokens =  36342, #acc tokens = 34035, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.695, 0.528, 0.413, 0.335), dur(b,g,a) = 0.063, 154773.307, 10.539 ms
+[2026-10-03T13:55:29.025Z] 44.38.889.409 I slot      release: id  0 | task 28849 | stop processing: n_tokens = 31136, truncated = 0
+[2026-10-03T13:55:29.131Z] 44.38.995.714 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:55:29.169Z] 44.39.033.597 I srv    operator(): chat format: peg-native
+[2026-10-03T13:55:29.172Z] 44.39.036.293 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.919 (31136/33863) > 0.100
+[2026-10-03T13:55:29.172Z] 44.39.036.295 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.919 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:55:29.172Z] 44.39.036.909 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:55:29.172Z] 44.39.036.981 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:55:29.172Z] 44.39.036.986 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:55:29.172Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:55:29.172Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:55:29.172Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:55:29.172Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:55:29.172Z] 44.39.036.995 I slot launch_slot_: id  0 | task 28933 | processing task, is_child = 0
+[2026-10-03T13:55:29.172Z] 44.39.037.000 I slot   operator(): id  0 | task 28933 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 33863
+[2026-10-03T13:55:29.172Z] 44.39.037.017 I slot   operator(): id  0 | task 28933 | cached n_tokens = 31136, memory_seq_rm [31136, end)
+[2026-10-03T13:55:32.686Z] 44.42.550.740 I slot print_timing: id  0 | task 28933 | prompt processing, n_tokens =   2499, progress = 0.99, t =   3.34 s / 748.71 tokens per second
+[2026-10-03T13:55:32.686Z] 44.42.550.742 I slot   operator(): id  0 | task 28933 | cached n_tokens = 33635, memory_seq_rm [33635, end)
+[2026-10-03T13:55:32.809Z] 44.42.673.668 I slot create_check: id  0 | task 28933 | created context checkpoint 16 of 32 (pos_min = 33634, pos_max = 33634, n_tokens = 33635, size = 281.783 MiB)
+[2026-10-03T13:55:33.120Z] 44.42.984.103 I slot print_timing: id  0 | task 28933 | prompt processing, n_tokens =   2723, progress = 1.00, t =   3.83 s / 710.50 tokens per second
+[2026-10-03T13:55:33.120Z] 44.42.984.105 I slot   operator(): id  0 | task 28933 | cached n_tokens = 33859, memory_seq_rm [33859, end)
+[2026-10-03T13:55:33.123Z] 44.42.987.540 I slot init_sampler: id  0 | task 28933 | init sampler, took 3.31 ms, tokens: text = 33863, total = 33863
+[2026-10-03T13:55:33.247Z] 44.43.111.179 I slot create_check: id  0 | task 28933 | created context checkpoint 17 of 32 (pos_min = 33858, pos_max = 33858, n_tokens = 33859, size = 282.663 MiB)
+[2026-10-03T13:55:33.302Z] 44.43.166.017 I spec        begin: ngram_mod occupancy = 98286/4194304 (0.02)
+[2026-10-03T13:55:36.328Z] 44.46.192.989 I slot print_timing: id  0 | task 28933 | n_gen =    120, tg =  39.32 t/s, tg_3s =  39.65 t/s
+[2026-10-03T13:55:38.425Z] 44.48.290.087 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:55:39.466Z] 44.49.330.350 I slot print_timing: id  0 | task 28933 | n_gen =    255, tg =  41.21 t/s, tg_3s =  43.03 t/s
+[2026-10-03T13:55:42.034Z] 44.51.898.648 I slot print_timing: id  0 | task 28933 | prompt eval time =    4129.35 ms /  2727 tokens (    1.51 ms per token,   660.39 tokens per second)
+[2026-10-03T13:55:42.034Z] 44.51.898.650 I slot print_timing: id  0 | task 28933 |        eval time =    8732.17 ms /   426 tokens (   20.55 ms per token,    48.67 tokens per second)
+[2026-10-03T13:55:42.034Z] 44.51.898.651 I slot print_timing: id  0 | task 28933 |       total time =   12861.52 ms /  3153 tokens
+[2026-10-03T13:55:42.034Z] 44.51.898.651 I slot print_timing: id  0 | task 28933 |    graphs reused =       6252
+[2026-10-03T13:55:42.034Z] 44.51.898.664 I slot print_timing: id  0 | task 28933 | draft acceptance = 0.51957 (  292 accepted /   562 generated), mean len =  4.40
+[2026-10-03T13:55:42.034Z] 44.51.898.665 I slot print_timing: id  0 | task 28933 |      acc per pos = (0.965, 0.674, 0.500, 0.395, 0.372, 0.035, 0.035, 0.035, 0.035, 0.035, 0.023, 0.023, 0.023, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.012, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:55:42.034Z] 44.51.898.681 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   68  17731    342, #gen drafts =    342, #acc drafts =   342, #gen tokens =  21713, #acc tokens =  6620, #mean acc len = 20.36, #acc rate/pos = (1.000, 0.915, 0.827, 0.760, 0.722, 0.678, 0.629, 0.599, 0.570, 0.556, 0.529, 0.509, 0.474, 0.447, 0.430, 0.412, 0.404, 0.383, 0.365, 0.363, 0.345, 0.325, 0.316, 0.298, 0.289, 0.281, 0.272, 0.260, 0.257, 0.254, 0.234, 0.222, 0.213, 0.211, 0.205, 0.193, 0.184, 0.181, 0.175, 0.175, 0.161, 0.161, 0.152, 0.143, 0.137, 0.132, 0.129, 0.126, 0.123, 0.123, 0.123, 0.123, 0.123, 0.114, 0.114, 0.108, 0.108, 0.108, 0.099, 0.099, 0.099, 0.099, 0.094, 0.094), dur(b,g,a) = 220.131, 71.816, 12.040 ms
+[2026-10-03T13:55:42.034Z] 44.51.898.685 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   68  17389  11631, #gen drafts =  11631, #acc drafts = 11339, #gen tokens =  36589, #acc tokens = 34267, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.695, 0.528, 0.413, 0.335), dur(b,g,a) = 0.064, 155698.536, 10.602 ms
+[2026-10-03T13:55:42.035Z] 44.51.899.643 I slot      release: id  0 | task 28933 | stop processing: n_tokens = 34288, truncated = 0
+[2026-10-03T13:55:44.087Z] 44.53.951.386 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:55:44.125Z] 44.53.989.480 I srv    operator(): chat format: peg-native
+[2026-10-03T13:55:44.127Z] 44.53.992.176 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.998 (34288/34344) > 0.100
+[2026-10-03T13:55:44.128Z] 44.53.992.179 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.998 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:55:44.128Z] 44.53.992.892 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:55:44.128Z] 44.53.992.981 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:55:44.128Z] 44.53.992.987 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:55:44.128Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:55:44.128Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:55:44.128Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:55:44.128Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:55:44.128Z] 44.53.992.994 I slot launch_slot_: id  0 | task 29124 | processing task, is_child = 0
+[2026-10-03T13:55:44.128Z] 44.53.993.000 I slot   operator(): id  0 | task 29124 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 34344
+[2026-10-03T13:55:44.128Z] 44.53.993.019 I slot   operator(): id  0 | task 29124 | cached n_tokens = 34288, memory_seq_rm [34288, end)
+[2026-10-03T13:55:44.255Z] 44.54.119.575 I slot create_check: id  0 | task 29124 | created context checkpoint 18 of 32 (pos_min = 34287, pos_max = 34287, n_tokens = 34288, size = 284.348 MiB)
+[2026-10-03T13:55:44.374Z] 44.54.238.634 I slot   operator(): id  0 | task 29124 | cached n_tokens = 34340, memory_seq_rm [34340, end)
+[2026-10-03T13:55:44.377Z] 44.54.242.127 I slot init_sampler: id  0 | task 29124 | init sampler, took 3.37 ms, tokens: text = 34344, total = 34344
+[2026-10-03T13:55:44.501Z] 44.54.365.492 I slot create_check: id  0 | task 29124 | created context checkpoint 19 of 32 (pos_min = 34339, pos_max = 34339, n_tokens = 34340, size = 284.553 MiB)
+[2026-10-03T13:55:44.556Z] 44.54.420.789 I spec        begin: ngram_mod occupancy = 33217/4194304 (0.01)
+[2026-10-03T13:55:47.579Z] 44.57.443.737 I slot print_timing: id  0 | task 29124 | n_gen =    125, tg =  41.03 t/s, tg_3s =  41.36 t/s
+[2026-10-03T13:55:50.638Z] 45.00.502.639 I slot print_timing: id  0 | task 29124 | n_gen =    251, tg =  41.11 t/s, tg_3s =  41.19 t/s
+[2026-10-03T13:55:53.695Z] 45.03.559.810 I slot print_timing: id  0 | task 29124 | n_gen =    341, tg =  37.21 t/s, tg_3s =  29.44 t/s
+[2026-10-03T13:55:55.728Z] 45.05.592.874 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:55:56.745Z] 45.06.609.512 I slot print_timing: id  0 | task 29124 | n_gen =    476, tg =  38.97 t/s, tg_3s =  44.27 t/s
+[2026-10-03T13:55:57.300Z] 45.07.164.899 I slot print_timing: id  0 | task 29124 | prompt eval time =     428.25 ms /    56 tokens (    7.65 ms per token,   130.76 tokens per second)
+[2026-10-03T13:55:57.300Z] 45.07.164.902 I slot print_timing: id  0 | task 29124 |        eval time =   12743.50 ms /   523 tokens (   24.41 ms per token,    40.96 tokens per second)
+[2026-10-03T13:55:57.300Z] 45.07.164.902 I slot print_timing: id  0 | task 29124 |       total time =   13171.76 ms /   579 tokens
+[2026-10-03T13:55:57.300Z] 45.07.164.903 I slot print_timing: id  0 | task 29124 |    graphs reused =       6336
+[2026-10-03T13:55:57.300Z] 45.07.164.916 I slot print_timing: id  0 | task 29124 | draft acceptance = 0.59923 (  311 accepted /   519 generated), mean len =  3.78
+[2026-10-03T13:55:57.300Z] 45.07.164.917 I slot print_timing: id  0 | task 29124 |      acc per pos = (0.973, 0.536, 0.348, 0.259, 0.214, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.027, 0.018, 0.018, 0.009, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:55:57.300Z] 45.07.164.937 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   69  17938    346, #gen drafts =    346, #acc drafts =   346, #gen tokens =  21969, #acc tokens =  6689, #mean acc len = 20.33, #acc rate/pos = (1.000, 0.913, 0.827, 0.760, 0.723, 0.679, 0.630, 0.601, 0.572, 0.558, 0.532, 0.512, 0.477, 0.451, 0.434, 0.416, 0.408, 0.387, 0.370, 0.367, 0.350, 0.327, 0.318, 0.298, 0.286, 0.277, 0.269, 0.257, 0.254, 0.251, 0.231, 0.220, 0.211, 0.208, 0.202, 0.191, 0.182, 0.179, 0.173, 0.173, 0.159, 0.159, 0.150, 0.142, 0.136, 0.130, 0.127, 0.124, 0.121, 0.121, 0.121, 0.121, 0.121, 0.113, 0.113, 0.107, 0.107, 0.107, 0.098, 0.098, 0.098, 0.098, 0.092, 0.092), dur(b,g,a) = 221.956, 72.122, 12.041 ms
+[2026-10-03T13:55:57.300Z] 45.07.164.941 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   69  17592  11739, #gen drafts =  11739, #acc drafts = 11445, #gen tokens =  36852, #acc tokens = 34513, #mean acc len = 3.94, #acc rate/pos = (0.975, 0.694, 0.526, 0.411, 0.334), dur(b,g,a) = 0.066, 156938.460, 10.696 ms
+[2026-10-03T13:55:57.301Z] 45.07.165.910 I slot      release: id  0 | task 29124 | stop processing: n_tokens = 34866, truncated = 0
+[2026-10-03T13:55:57.451Z] 45.07.315.193 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:55:57.490Z] 45.07.354.325 I srv    operator(): chat format: peg-native
+[2026-10-03T13:55:57.492Z] 45.07.357.024 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.994 (34866/35071) > 0.100
+[2026-10-03T13:55:57.492Z] 45.07.357.027 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.994 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:55:57.493Z] 45.07.357.762 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:55:57.493Z] 45.07.357.840 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:55:57.493Z] 45.07.357.847 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:55:57.493Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:55:57.493Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:55:57.493Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:55:57.493Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:55:57.493Z] 45.07.357.861 I slot launch_slot_: id  0 | task 29338 | processing task, is_child = 0
+[2026-10-03T13:55:57.493Z] 45.07.357.868 I slot   operator(): id  0 | task 29338 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 35071
+[2026-10-03T13:55:57.493Z] 45.07.357.889 I slot   operator(): id  0 | task 29338 | cached n_tokens = 34866, memory_seq_rm [34866, end)
+[2026-10-03T13:55:57.620Z] 45.07.484.035 I slot create_check: id  0 | task 29338 | created context checkpoint 20 of 32 (pos_min = 34865, pos_max = 34865, n_tokens = 34866, size = 286.620 MiB)
+[2026-10-03T13:55:57.919Z] 45.07.783.706 I slot   operator(): id  0 | task 29338 | cached n_tokens = 35067, memory_seq_rm [35067, end)
+[2026-10-03T13:55:57.923Z] 45.07.787.269 I slot init_sampler: id  0 | task 29338 | init sampler, took 3.44 ms, tokens: text = 35071, total = 35071
+[2026-10-03T13:55:58.048Z] 45.07.912.509 I slot create_check: id  0 | task 29338 | created context checkpoint 21 of 32 (pos_min = 35066, pos_max = 35066, n_tokens = 35067, size = 287.409 MiB)
+[2026-10-03T13:55:58.103Z] 45.07.967.777 I spec        begin: ngram_mod occupancy = 33864/4194304 (0.01)
+[2026-10-03T13:56:00.315Z] 45.10.179.905 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:56:01.144Z] 45.11.008.918 I slot print_timing: id  0 | task 29338 | n_gen =    128, tg =  41.77 t/s, tg_3s =  42.10 t/s
+[2026-10-03T13:56:03.119Z] 45.12.983.228 I slot print_timing: id  0 | task 29338 | prompt eval time =     610.35 ms /   205 tokens (    2.98 ms per token,   335.87 tokens per second)
+[2026-10-03T13:56:03.119Z] 45.12.983.230 I slot print_timing: id  0 | task 29338 |        eval time =    5014.88 ms /   253 tokens (   19.90 ms per token,    50.25 tokens per second)
+[2026-10-03T13:56:03.119Z] 45.12.983.231 I slot print_timing: id  0 | task 29338 |       total time =    5625.23 ms /   458 tokens
+[2026-10-03T13:56:03.119Z] 45.12.983.232 I slot print_timing: id  0 | task 29338 |    graphs reused =       6357
+[2026-10-03T13:56:03.119Z] 45.12.983.244 I slot print_timing: id  0 | task 29338 | draft acceptance = 0.50857 (  178 accepted /   350 generated), mean len =  4.63
+[2026-10-03T13:56:03.119Z] 45.12.983.245 I slot print_timing: id  0 | task 29338 |      acc per pos = (0.980, 0.776, 0.633, 0.469, 0.429, 0.041, 0.041, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.020, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:56:03.119Z] 45.12.983.266 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   70  18009    349, #gen drafts =    349, #acc drafts =   349, #gen tokens =  22161, #acc tokens =  6721, #mean acc len = 20.26, #acc rate/pos = (1.000, 0.914, 0.828, 0.759, 0.722, 0.679, 0.630, 0.602, 0.570, 0.556, 0.530, 0.510, 0.476, 0.450, 0.433, 0.415, 0.407, 0.387, 0.370, 0.367, 0.350, 0.324, 0.315, 0.295, 0.284, 0.275, 0.266, 0.255, 0.252, 0.249, 0.229, 0.218, 0.209, 0.206, 0.201, 0.189, 0.181, 0.178, 0.172, 0.172, 0.158, 0.158, 0.149, 0.140, 0.135, 0.129, 0.126, 0.123, 0.120, 0.120, 0.120, 0.120, 0.120, 0.112, 0.112, 0.106, 0.106, 0.106, 0.097, 0.097, 0.097, 0.097, 0.092, 0.092), dur(b,g,a) = 223.850, 72.260, 12.042 ms
+[2026-10-03T13:56:03.119Z] 45.12.983.270 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   70  17660  11785, #gen drafts =  11785, #acc drafts = 11490, #gen tokens =  37010, #acc tokens = 34662, #mean acc len = 3.94, #acc rate/pos = (0.975, 0.694, 0.527, 0.411, 0.334), dur(b,g,a) = 0.067, 157498.868, 10.736 ms
+[2026-10-03T13:56:03.120Z] 45.12.984.284 I slot      release: id  0 | task 29338 | stop processing: n_tokens = 35323, truncated = 0
+[2026-10-03T13:56:03.246Z] 45.13.110.745 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:56:03.286Z] 45.13.150.193 I srv    operator(): chat format: peg-native
+[2026-10-03T13:56:03.288Z] 45.13.152.940 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.950 (35323/37183) > 0.100
+[2026-10-03T13:56:03.288Z] 45.13.152.944 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.950 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:56:03.289Z] 45.13.153.718 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:56:03.289Z] 45.13.153.805 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:56:03.289Z] 45.13.153.812 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:56:03.289Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:56:03.289Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:56:03.289Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:56:03.289Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:56:03.290Z] 45.13.153.823 I slot launch_slot_: id  0 | task 29415 | processing task, is_child = 0
+[2026-10-03T13:56:03.290Z] 45.13.153.830 I slot   operator(): id  0 | task 29415 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 37183
+[2026-10-03T13:56:03.290Z] 45.13.153.853 I slot   operator(): id  0 | task 29415 | cached n_tokens = 35323, memory_seq_rm [35323, end)
+[2026-10-03T13:56:05.642Z] 45.15.506.825 I slot   operator(): id  0 | task 29415 | cached n_tokens = 36955, memory_seq_rm [36955, end)
+[2026-10-03T13:56:05.771Z] 45.15.635.027 I slot create_check: id  0 | task 29415 | created context checkpoint 22 of 32 (pos_min = 36954, pos_max = 36954, n_tokens = 36955, size = 294.827 MiB)
+[2026-10-03T13:56:06.090Z] 45.15.954.352 I slot   operator(): id  0 | task 29415 | cached n_tokens = 37179, memory_seq_rm [37179, end)
+[2026-10-03T13:56:06.093Z] 45.15.958.115 I slot init_sampler: id  0 | task 29415 | init sampler, took 3.64 ms, tokens: text = 37183, total = 37183
+[2026-10-03T13:56:06.223Z] 45.16.087.483 I slot create_check: id  0 | task 29415 | created context checkpoint 23 of 32 (pos_min = 37178, pos_max = 37178, n_tokens = 37179, size = 295.708 MiB)
+[2026-10-03T13:56:06.279Z] 45.16.143.810 I spec        begin: ngram_mod occupancy = 35318/4194304 (0.01)
+[2026-10-03T13:56:09.332Z] 45.19.196.271 I slot print_timing: id  0 | task 29415 | n_gen =    127, tg =  41.29 t/s, tg_3s =  41.61 t/s
+[2026-10-03T13:56:10.074Z] 45.19.938.822 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:56:12.367Z] 45.22.231.572 I slot print_timing: id  0 | task 29415 | n_gen =    279, tg =  45.67 t/s, tg_3s =  50.08 t/s
+[2026-10-03T13:56:13.788Z] 45.23.652.024 I slot print_timing: id  0 | task 29415 | prompt eval time =    2990.46 ms /  1860 tokens (    1.61 ms per token,   621.98 tokens per second)
+[2026-10-03T13:56:13.788Z] 45.23.652.026 I slot print_timing: id  0 | task 29415 |        eval time =    7507.60 ms /   393 tokens (   19.15 ms per token,    52.21 tokens per second)
+[2026-10-03T13:56:13.788Z] 45.23.652.027 I slot print_timing: id  0 | task 29415 |       total time =   10498.06 ms /  2253 tokens
+[2026-10-03T13:56:13.788Z] 45.23.652.028 I slot print_timing: id  0 | task 29415 |    graphs reused =       6387
+[2026-10-03T13:56:13.788Z] 45.23.652.041 I slot print_timing: id  0 | task 29415 | draft acceptance = 0.51444 (  285 accepted /   554 generated), mean len =  4.96
+[2026-10-03T13:56:13.788Z] 45.23.652.041 I slot print_timing: id  0 | task 29415 |      acc per pos = (0.972, 0.833, 0.653, 0.514, 0.458, 0.056, 0.056, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.014, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:56:13.788Z] 45.23.652.062 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   71  18112    354, #gen drafts =    354, #acc drafts =   354, #gen tokens =  22481, #acc tokens =  6784, #mean acc len = 20.16, #acc rate/pos = (1.000, 0.912, 0.828, 0.760, 0.723, 0.681, 0.633, 0.605, 0.565, 0.551, 0.525, 0.506, 0.472, 0.446, 0.429, 0.412, 0.404, 0.384, 0.367, 0.364, 0.347, 0.322, 0.314, 0.294, 0.282, 0.274, 0.266, 0.254, 0.251, 0.249, 0.229, 0.218, 0.209, 0.206, 0.201, 0.189, 0.181, 0.178, 0.169, 0.169, 0.155, 0.155, 0.147, 0.138, 0.133, 0.127, 0.124, 0.121, 0.119, 0.119, 0.119, 0.119, 0.119, 0.110, 0.110, 0.105, 0.105, 0.105, 0.096, 0.096, 0.096, 0.096, 0.090, 0.090), dur(b,g,a) = 225.860, 74.406, 12.849 ms
+[2026-10-03T13:56:13.788Z] 45.23.652.065 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   71  17758  11852, #gen drafts =  11852, #acc drafts = 11556, #gen tokens =  37244, #acc tokens = 34889, #mean acc len = 3.94, #acc rate/pos = (0.975, 0.695, 0.527, 0.412, 0.335), dur(b,g,a) = 0.068, 158330.791, 10.793 ms
+[2026-10-03T13:56:13.788Z] 45.23.653.082 I slot      release: id  0 | task 29415 | stop processing: n_tokens = 37576, truncated = 0
+[2026-10-03T13:56:15.190Z] 45.25.054.723 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:56:15.231Z] 45.25.096.028 I srv    operator(): chat format: peg-native
+[2026-10-03T13:56:15.234Z] 45.25.098.768 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.998 (37576/37645) > 0.100
+[2026-10-03T13:56:15.234Z] 45.25.098.771 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.998 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:56:15.235Z] 45.25.099.498 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:56:15.235Z] 45.25.099.577 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:56:15.235Z] 45.25.099.583 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:56:15.235Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:56:15.235Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:56:15.235Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:56:15.235Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:56:15.235Z] 45.25.099.595 I slot launch_slot_: id  0 | task 29531 | processing task, is_child = 0
+[2026-10-03T13:56:15.235Z] 45.25.099.601 I slot   operator(): id  0 | task 29531 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 37645
+[2026-10-03T13:56:15.235Z] 45.25.099.623 I slot   operator(): id  0 | task 29531 | cached n_tokens = 37576, memory_seq_rm [37576, end)
+[2026-10-03T13:56:15.367Z] 45.25.231.595 I slot create_check: id  0 | task 29531 | created context checkpoint 24 of 32 (pos_min = 37575, pos_max = 37575, n_tokens = 37576, size = 297.267 MiB)
+[2026-10-03T13:56:15.488Z] 45.25.352.658 I slot   operator(): id  0 | task 29531 | cached n_tokens = 37641, memory_seq_rm [37641, end)
+[2026-10-03T13:56:15.492Z] 45.25.356.458 I slot init_sampler: id  0 | task 29531 | init sampler, took 3.68 ms, tokens: text = 37645, total = 37645
+[2026-10-03T13:56:15.622Z] 45.25.486.817 I slot create_check: id  0 | task 29531 | created context checkpoint 25 of 32 (pos_min = 37640, pos_max = 37640, n_tokens = 37641, size = 297.523 MiB)
+[2026-10-03T13:56:15.679Z] 45.25.543.408 I spec        begin: ngram_mod occupancy = 35694/4194304 (0.01)
+[2026-10-03T13:56:18.366Z] 45.28.230.580 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:56:18.714Z] 45.28.578.386 I slot print_timing: id  0 | task 29531 | n_gen =    132, tg =  43.17 t/s, tg_3s =  43.50 t/s
+[2026-10-03T13:56:20.058Z] 45.29.922.382 I slot print_timing: id  0 | task 29531 | prompt eval time =     444.27 ms /    69 tokens (    6.44 ms per token,   155.31 tokens per second)
+[2026-10-03T13:56:20.058Z] 45.29.922.384 I slot print_timing: id  0 | task 29531 |        eval time =    4378.37 ms /   224 tokens (   19.63 ms per token,    50.93 tokens per second)
+[2026-10-03T13:56:20.058Z] 45.29.922.385 I slot print_timing: id  0 | task 29531 |       total time =    4822.65 ms /   293 tokens
+[2026-10-03T13:56:20.058Z] 45.29.922.385 I slot print_timing: id  0 | task 29531 |    graphs reused =       6405
+[2026-10-03T13:56:20.058Z] 45.29.922.397 I slot print_timing: id  0 | task 29531 | draft acceptance = 0.93413 (  156 accepted /   167 generated), mean len =  3.84
+[2026-10-03T13:56:20.058Z] 45.29.922.398 I slot print_timing: id  0 | task 29531 |      acc per pos = (0.982, 0.673, 0.473, 0.382, 0.327, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:56:20.058Z] 45.29.922.424 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   72  18179    354, #gen drafts =    354, #acc drafts =   354, #gen tokens =  22481, #acc tokens =  6784, #mean acc len = 20.16, #acc rate/pos = (1.000, 0.912, 0.828, 0.760, 0.723, 0.681, 0.633, 0.605, 0.565, 0.551, 0.525, 0.506, 0.472, 0.446, 0.429, 0.412, 0.404, 0.384, 0.367, 0.364, 0.347, 0.322, 0.314, 0.294, 0.282, 0.274, 0.266, 0.254, 0.251, 0.249, 0.229, 0.218, 0.209, 0.206, 0.201, 0.189, 0.181, 0.178, 0.169, 0.169, 0.155, 0.155, 0.147, 0.138, 0.133, 0.127, 0.124, 0.121, 0.119, 0.119, 0.119, 0.119, 0.119, 0.110, 0.110, 0.105, 0.105, 0.105, 0.096, 0.096, 0.096, 0.096, 0.090, 0.090), dur(b,g,a) = 227.870, 74.508, 12.849 ms
+[2026-10-03T13:56:20.058Z] 45.29.922.428 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   72  17825  11907, #gen drafts =  11907, #acc drafts = 11610, #gen tokens =  37411, #acc tokens = 35045, #mean acc len = 3.94, #acc rate/pos = (0.975, 0.694, 0.527, 0.412, 0.335), dur(b,g,a) = 0.069, 158917.464, 10.841 ms
+[2026-10-03T13:56:20.059Z] 45.29.923.467 I slot      release: id  0 | task 29531 | stop processing: n_tokens = 37868, truncated = 0
+[2026-10-03T13:56:20.225Z] 45.30.089.239 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:56:20.266Z] 45.30.130.441 I srv    operator(): chat format: peg-native
+[2026-10-03T13:56:20.269Z] 45.30.133.212 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.995 (37868/38074) > 0.100
+[2026-10-03T13:56:20.269Z] 45.30.133.215 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.995 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:56:20.269Z] 45.30.133.936 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:56:20.269Z] 45.30.134.010 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:56:20.269Z] 45.30.134.016 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:56:20.269Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:56:20.269Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:56:20.269Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:56:20.269Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:56:20.269Z] 45.30.134.024 I slot launch_slot_: id  0 | task 29621 | processing task, is_child = 0
+[2026-10-03T13:56:20.269Z] 45.30.134.030 I slot   operator(): id  0 | task 29621 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 38074
+[2026-10-03T13:56:20.270Z] 45.30.134.051 I slot   operator(): id  0 | task 29621 | cached n_tokens = 37868, memory_seq_rm [37868, end)
+[2026-10-03T13:56:20.403Z] 45.30.267.734 I slot create_check: id  0 | task 29621 | created context checkpoint 26 of 32 (pos_min = 37867, pos_max = 37867, n_tokens = 37868, size = 298.415 MiB)
+[2026-10-03T13:56:20.710Z] 45.30.574.184 I slot   operator(): id  0 | task 29621 | cached n_tokens = 38070, memory_seq_rm [38070, end)
+[2026-10-03T13:56:20.713Z] 45.30.578.025 I slot init_sampler: id  0 | task 29621 | init sampler, took 3.72 ms, tokens: text = 38074, total = 38074
+[2026-10-03T13:56:20.846Z] 45.30.710.538 I slot create_check: id  0 | task 29621 | created context checkpoint 27 of 32 (pos_min = 38069, pos_max = 38069, n_tokens = 38070, size = 299.208 MiB)
+[2026-10-03T13:56:20.903Z] 45.30.767.187 I spec        begin: ngram_mod occupancy = 36027/4194304 (0.01)
+[2026-10-03T13:56:21.697Z] 45.31.561.284 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:56:23.346Z] 45.33.211.000 I slot print_timing: id  0 | task 29621 | prompt eval time =     633.52 ms /   206 tokens (    3.08 ms per token,   325.17 tokens per second)
+[2026-10-03T13:56:23.347Z] 45.33.211.002 I slot print_timing: id  0 | task 29621 |        eval time =    2443.31 ms /   147 tokens (   16.74 ms per token,    59.75 tokens per second)
+[2026-10-03T13:56:23.347Z] 45.33.211.003 I slot print_timing: id  0 | task 29621 |       total time =    3076.83 ms /   353 tokens
+[2026-10-03T13:56:23.347Z] 45.33.211.004 I slot print_timing: id  0 | task 29621 |    graphs reused =       6418
+[2026-10-03T13:56:23.347Z] 45.33.211.015 I slot print_timing: id  0 | task 29621 | draft acceptance = 0.98230 (  111 accepted /   113 generated), mean len =  4.70
+[2026-10-03T13:56:23.347Z] 45.33.211.016 I slot print_timing: id  0 | task 29621 |      acc per pos = (0.967, 0.767, 0.733, 0.667, 0.567, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:56:23.347Z] 45.33.211.036 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   73  18214    354, #gen drafts =    354, #acc drafts =   354, #gen tokens =  22481, #acc tokens =  6784, #mean acc len = 20.16, #acc rate/pos = (1.000, 0.912, 0.828, 0.760, 0.723, 0.681, 0.633, 0.605, 0.565, 0.551, 0.525, 0.506, 0.472, 0.446, 0.429, 0.412, 0.404, 0.384, 0.367, 0.364, 0.347, 0.322, 0.314, 0.294, 0.282, 0.274, 0.266, 0.254, 0.251, 0.249, 0.229, 0.218, 0.209, 0.206, 0.201, 0.189, 0.181, 0.178, 0.169, 0.169, 0.155, 0.155, 0.147, 0.138, 0.133, 0.127, 0.124, 0.121, 0.119, 0.119, 0.119, 0.119, 0.119, 0.110, 0.110, 0.105, 0.105, 0.105, 0.096, 0.096, 0.096, 0.096, 0.090, 0.090), dur(b,g,a) = 229.892, 74.569, 12.849 ms
+[2026-10-03T13:56:23.347Z] 45.33.211.040 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   73  17860  11937, #gen drafts =  11937, #acc drafts = 11639, #gen tokens =  37524, #acc tokens = 35156, #mean acc len = 3.95, #acc rate/pos = (0.975, 0.695, 0.528, 0.412, 0.336), dur(b,g,a) = 0.069, 159271.112, 10.874 ms
+[2026-10-03T13:56:23.347Z] 45.33.212.081 I slot      release: id  0 | task 29621 | stop processing: n_tokens = 38220, truncated = 0
+[2026-10-03T13:56:25.705Z] 45.35.569.444 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:56:25.748Z] 45.35.613.052 I srv    operator(): chat format: peg-native
+[2026-10-03T13:56:25.751Z] 45.35.615.859 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.997 (38220/38339) > 0.100
+[2026-10-03T13:56:25.751Z] 45.35.615.862 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.997 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:56:25.752Z] 45.35.616.515 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:56:25.752Z] 45.35.616.581 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:56:25.752Z] 45.35.616.586 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:56:25.752Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:56:25.752Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:56:25.752Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:56:25.752Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:56:25.752Z] 45.35.616.591 I slot launch_slot_: id  0 | task 29681 | processing task, is_child = 0
+[2026-10-03T13:56:25.752Z] 45.35.616.596 I slot   operator(): id  0 | task 29681 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 38339
+[2026-10-03T13:56:25.752Z] 45.35.616.614 I slot   operator(): id  0 | task 29681 | cached n_tokens = 38220, memory_seq_rm [38220, end)
+[2026-10-03T13:56:25.886Z] 45.35.750.492 I slot create_check: id  0 | task 29681 | created context checkpoint 28 of 32 (pos_min = 38219, pos_max = 38219, n_tokens = 38220, size = 299.798 MiB)
+[2026-10-03T13:56:26.063Z] 45.35.927.434 I slot   operator(): id  0 | task 29681 | cached n_tokens = 38335, memory_seq_rm [38335, end)
+[2026-10-03T13:56:26.067Z] 45.35.931.309 I slot init_sampler: id  0 | task 29681 | init sampler, took 3.75 ms, tokens: text = 38339, total = 38339
+[2026-10-03T13:56:26.199Z] 45.36.063.570 I slot create_check: id  0 | task 29681 | created context checkpoint 29 of 32 (pos_min = 38334, pos_max = 38334, n_tokens = 38335, size = 300.250 MiB)
+[2026-10-03T13:56:26.256Z] 45.36.120.334 I spec        begin: ngram_mod occupancy = 36287/4194304 (0.01)
+[2026-10-03T13:56:29.051Z] 45.38.915.280 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:56:29.296Z] 45.39.160.294 I slot print_timing: id  0 | task 29681 | n_gen =    144, tg =  47.05 t/s, tg_3s =  47.37 t/s
+[2026-10-03T13:56:32.328Z] 45.42.192.239 I slot print_timing: id  0 | task 29681 | n_gen =    294, tg =  48.26 t/s, tg_3s =  49.47 t/s
+[2026-10-03T13:56:34.835Z] 45.44.699.743 I slot print_timing: id  0 | task 29681 | prompt eval time =     504.11 ms /   119 tokens (    4.24 ms per token,   236.06 tokens per second)
+[2026-10-03T13:56:34.835Z] 45.44.699.746 I slot print_timing: id  0 | task 29681 |        eval time =    8578.91 ms /   411 tokens (   20.92 ms per token,    47.79 tokens per second)
+[2026-10-03T13:56:34.835Z] 45.44.699.746 I slot print_timing: id  0 | task 29681 |       total time =    9083.02 ms /   530 tokens
+[2026-10-03T13:56:34.835Z] 45.44.699.747 I slot print_timing: id  0 | task 29681 |    graphs reused =       6448
+[2026-10-03T13:56:34.835Z] 45.44.699.769 I slot print_timing: id  0 | task 29681 | draft acceptance = 0.88013 (  279 accepted /   317 generated), mean len =  3.71
+[2026-10-03T13:56:34.835Z] 45.44.699.772 I slot print_timing: id  0 | task 29681 |      acc per pos = (0.951, 0.738, 0.476, 0.340, 0.204, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:56:34.835Z] 45.44.699.792 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   74  18345    354, #gen drafts =    354, #acc drafts =   354, #gen tokens =  22481, #acc tokens =  6784, #mean acc len = 20.16, #acc rate/pos = (1.000, 0.912, 0.828, 0.760, 0.723, 0.681, 0.633, 0.605, 0.565, 0.551, 0.525, 0.506, 0.472, 0.446, 0.429, 0.412, 0.404, 0.384, 0.367, 0.364, 0.347, 0.322, 0.314, 0.294, 0.282, 0.274, 0.266, 0.254, 0.251, 0.249, 0.229, 0.218, 0.209, 0.206, 0.201, 0.189, 0.181, 0.178, 0.169, 0.169, 0.155, 0.155, 0.147, 0.138, 0.133, 0.127, 0.124, 0.121, 0.119, 0.119, 0.119, 0.119, 0.119, 0.110, 0.110, 0.105, 0.105, 0.105, 0.096, 0.096, 0.096, 0.096, 0.090, 0.090), dur(b,g,a) = 231.946, 74.764, 12.849 ms
+[2026-10-03T13:56:34.835Z] 45.44.699.800 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   74  17991  12040, #gen drafts =  12040, #acc drafts = 11737, #gen tokens =  37841, #acc tokens = 35435, #mean acc len = 3.94, #acc rate/pos = (0.975, 0.695, 0.527, 0.412, 0.334), dur(b,g,a) = 0.070, 160423.121, 10.965 ms
+[2026-10-03T13:56:34.836Z] 45.44.700.834 I slot      release: id  0 | task 29681 | stop processing: n_tokens = 38749, truncated = 0
+[2026-10-03T13:56:35.015Z] 45.44.879.203 I srv  server_strea: conv_id= (empty=1)
+[2026-10-03T13:56:35.057Z] 45.44.921.732 I srv    operator(): chat format: peg-native
+[2026-10-03T13:56:35.060Z] 45.44.924.527 I slot get_availabl: id  0 | task -1 |  - checking sim = 0.996 (38749/38921) > 0.100
+[2026-10-03T13:56:35.060Z] 45.44.924.530 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.996 (> 0.100 thold), f_keep = 1.000
+[2026-10-03T13:56:35.061Z] 45.44.925.283 I cmn  common_reaso: activated, budget=19999 tokens
+[2026-10-03T13:56:35.061Z] 45.44.925.349 I slot launch_slot_: id  0 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> ?top-p -> ?min-p -> ?xtc -> temp-ext -> dist
+[2026-10-03T13:56:35.061Z] 45.44.925.354 I slot launch_slot_: id  0 | task -1 | sampler params:
+[2026-10-03T13:56:35.061Z]      repeat_last_n = 64, repeat_penalty = 1.000, frequency_penalty = 0.000, presence_penalty = 0.000
+[2026-10-03T13:56:35.061Z]      dry_multiplier = 0.000, dry_base = 1.750, dry_allowed_length = 2, dry_penalty_last_n = 64
+[2026-10-03T13:56:35.061Z]      top_k = 1, top_p = 1.000, min_p = 0.000, xtc_probability = 0.000, xtc_threshold = 0.100, typical_p = 1.000, top_n_sigma = -1.000, temp = 0.000
+[2026-10-03T13:56:35.061Z]      mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000, adaptive_target = -1.000, adaptive_decay = 0.900
+[2026-10-03T13:56:35.061Z] 45.44.925.365 I slot launch_slot_: id  0 | task 29853 | processing task, is_child = 0
+[2026-10-03T13:56:35.061Z] 45.44.925.371 I slot   operator(): id  0 | task 29853 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 38921
+[2026-10-03T13:56:35.061Z] 45.44.925.388 I slot   operator(): id  0 | task 29853 | cached n_tokens = 38749, memory_seq_rm [38749, end)
+[2026-10-03T13:56:35.196Z] 45.45.060.297 I slot create_check: id  0 | task 29853 | created context checkpoint 30 of 32 (pos_min = 38748, pos_max = 38748, n_tokens = 38749, size = 301.876 MiB)
+[2026-10-03T13:56:35.250Z] 45.45.114.195 I slot   operator(): id  0 | task 29853 | cached n_tokens = 38751, memory_seq_rm [38751, end)
+[2026-10-03T13:56:35.382Z] 45.45.246.244 I slot create_check: id  0 | task 29853 | created context checkpoint 31 of 32 (pos_min = 38750, pos_max = 38750, n_tokens = 38751, size = 301.884 MiB)
+[2026-10-03T13:56:35.646Z] 45.45.510.390 I slot   operator(): id  0 | task 29853 | cached n_tokens = 38917, memory_seq_rm [38917, end)
+[2026-10-03T13:56:35.650Z] 45.45.514.326 I slot init_sampler: id  0 | task 29853 | init sampler, took 3.81 ms, tokens: text = 38921, total = 38921
+[2026-10-03T13:56:35.650Z] 45.45.514.330 I slot create_check: id  0 | task 29853 | erasing context checkpoint too close to an earlier one (pos_min = 27577, pos_max = 27577, n_tokens = 27578, size = 257.984 MiB)
+[2026-10-03T13:56:35.800Z] 45.45.664.191 I slot create_check: id  0 | task 29853 | created context checkpoint 31 of 32 (pos_min = 38916, pos_max = 38916, n_tokens = 38917, size = 302.536 MiB)
+[2026-10-03T13:56:35.857Z] 45.45.721.170 I spec        begin: ngram_mod occupancy = 36831/4194304 (0.01)
+[2026-10-03T13:56:37.804Z] 45.47.668.850 I cmn  common_reaso: deactivated (natural end)
+[2026-10-03T13:56:38.858Z] 45.48.723.035 I slot print_timing: id  0 | task 29853 | prompt eval time =     796.23 ms /   172 tokens (    4.63 ms per token,   216.02 tokens per second)
+[2026-10-03T13:56:38.859Z] 45.48.723.037 I slot print_timing: id  0 | task 29853 |        eval time =    3001.29 ms /    97 tokens (   31.26 ms per token,    31.99 tokens per second)
+[2026-10-03T13:56:38.859Z] 45.48.723.038 I slot print_timing: id  0 | task 29853 |       total time =    3797.52 ms /   269 tokens
+[2026-10-03T13:56:38.859Z] 45.48.723.038 I slot print_timing: id  0 | task 29853 |    graphs reused =       6467
+[2026-10-03T13:56:38.859Z] 45.48.723.050 I slot print_timing: id  0 | task 29853 | draft acceptance = 0.86538 (   45 accepted /    52 generated), mean len =  2.80
+[2026-10-03T13:56:38.859Z] 45.48.723.051 I slot print_timing: id  0 | task 29853 |      acc per pos = (0.960, 0.400, 0.160, 0.160, 0.120, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000, 0.000)
+[2026-10-03T13:56:38.859Z] 45.48.723.071 I spec common_specu: statistics        ngram-mod: #calls(b,g,a) =   75  18396    354, #gen drafts =    354, #acc drafts =   354, #gen tokens =  22481, #acc tokens =  6784, #mean acc len = 20.16, #acc rate/pos = (1.000, 0.912, 0.828, 0.760, 0.723, 0.681, 0.633, 0.605, 0.565, 0.551, 0.525, 0.506, 0.472, 0.446, 0.429, 0.412, 0.404, 0.384, 0.367, 0.364, 0.347, 0.322, 0.314, 0.294, 0.282, 0.274, 0.266, 0.254, 0.251, 0.249, 0.229, 0.218, 0.209, 0.206, 0.201, 0.189, 0.181, 0.178, 0.169, 0.169, 0.155, 0.155, 0.147, 0.138, 0.133, 0.127, 0.124, 0.121, 0.119, 0.119, 0.119, 0.119, 0.119, 0.110, 0.110, 0.105, 0.105, 0.105, 0.096, 0.096, 0.096, 0.096, 0.090, 0.090), dur(b,g,a) = 233.983, 74.842, 12.849 ms
+[2026-10-03T13:56:38.859Z] 45.48.723.076 I spec common_specu: statistics        draft-mtp: #calls(b,g,a) =   75  18042  12065, #gen drafts =  12065, #acc drafts = 11761, #gen tokens =  37893, #acc tokens = 35480, #mean acc len = 3.94, #acc rate/pos = (0.975, 0.694, 0.526, 0.411, 0.334), dur(b,g,a) = 0.071, 160705.612, 10.986 ms
+[2026-10-03T13:56:38.859Z] 45.48.724.149 I slot      release: id  0 | task 29853 | stop processing: n_tokens = 39017, truncated = 0
