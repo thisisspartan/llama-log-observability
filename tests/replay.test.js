@@ -2231,7 +2231,7 @@ async function loadClientScript() {
     return m[1].replace(tail,
       'setInterval(pollFallback, 400);\n' +
       '    pollFallback();\n' +
-      '    globalThis.__T = { renderState, buildMtpBars, get renderedMtpN() { return renderedMtpN; }, setEvents(evts) { clientEventsRev = -1; clientEvents = evts; lastEventsHash = ""; } };\n' +
+      '    globalThis.__T = { renderState, buildMtpBars, get renderedMtpN() { return renderedMtpN; }, scheduleRender, get latestState() { return latestState; }, setEvents(evts) { clientEventsRev = -1; clientEvents = evts; lastEventsHash = ""; } };\n' +
       '  })();');
   } finally { child.kill('SIGKILL'); }
 }
@@ -2274,12 +2274,18 @@ function mkUiState(draftNMax, posAcc) {
 function runRenderCase(state, after) {
   const script = clientScript;
   const els = {};
+  // слушатели, зарегистрированные страницей на элементах (для детерминированного
+  // вызова обработчика lang-toggle в тесте 5b; существующие тесты их не используют)
+  const listeners = {};
   const makeEl = (id) => ({
     id, innerText: '', innerHTML: '', textContent: '', title: '', value: '',
     checked: false, disabled: false, className: '',
     style: {}, dataset: {}, files: null, scrollTop: 0, scrollHeight: 0,
     classList: { add() {}, remove() {}, toggle() {}, contains: () => false },
-    addEventListener() {}, removeEventListener() {}, contains: () => false,
+    addEventListener(ev, fn) { (listeners[id] = listeners[id] || {})[ev] = fn; },
+    removeEventListener() {}, contains: () => false,
+    // fake-DOM полнота: applyI18n сбрасывает data-processed на mermaid-блоке (реальный DOM имеет)
+    removeAttribute() {}, setAttribute() {},
     getBoundingClientRect: () => ({ left: 0, top: 0, width: 0, height: 0 }),
     getContext: () => new Proxy({}, {
       get: (t, p) => (p in t ? t[p] : () => undefined),
@@ -2310,8 +2316,8 @@ function runRenderCase(state, after) {
     const T_ = globalThis.__T;
     assert.ok(T_ && typeof T_.renderState === 'function', '__T.renderState не экспортирован');
     T_.renderState(state);
-    if (typeof after === 'function') after(T_); // до restore глобалов (document и др.)
-    return { els, T_ };
+    if (typeof after === 'function') after(T_, { els, listeners }); // до restore глобалов (document и др.)
+    return { els, T_, listeners };
   } finally {
     for (const k of keys) global[k] = saved[k];
   }
@@ -2379,6 +2385,34 @@ test('UI-render: params i18n экранированы — XSS из параме�
   const html = String(els['log-feed'].innerHTML);
   assert.ok(!html.includes('<script>alert(1)'), 'сырой XSS из param не попадает в innerHTML');
   assert.ok(html.includes('&lt;script&gt;alert(1)&lt;/script&gt;'), 'param экранирован');
+});
+
+// 5b: lang-toggle обязан сбрасывать render-кэши (lastEventsHash/lastHistHash/lastLiveHash):
+// тот же снапшот, БЕЗ новых событий, перерисовывается на новый язык.
+// Падает на 7da5c99: там обработчик не сбрасывал кэши и не звал scheduleRender.
+// rAF в харнесе no-op (как во всех UI-тестах): очередь scheduleRender флешится
+// вызовом renderState(latestState) — ровно тем же телом, что ставит в очередь сам
+// scheduleRender (www.js: requestAnimationFrame(() => { ... renderState(latestState) })).
+test('UI-render: lang-toggle сбрасывает last*Hash — тот же снапшот перерисован на RU', async () => {
+  await getClientScript();
+  const st = mkUiState(5, ['0.975', '0.698', '0.531', '0.415', '0.337']);
+  st.events = [{ ts: '12:00:00', stage: 'DONE', tag: 'DONE', titleKey: 'ev_done_title', detailKey: 'ev_done_detail', params: { tok: '100', sec: '1.00', tps: '10.0' }, id: 1, taskId: '1' }];
+  runRenderCase(st, (T_, { els, listeners }) => {
+    T_.setEvents(st.events);
+    T_.scheduleRender(st); // как в реальном цикле: через scheduleRender (ставит latestState)
+    T_.renderState(T_.latestState); // флеш очереди scheduleRender
+    const en = String(els['log-feed'].innerHTML);
+    assert.ok(en.includes('Response complete'), 'EN-рендер до переключения');
+    const click = listeners['lang-toggle'] && listeners['lang-toggle'].click;
+    assert.ok(typeof click === 'function', 'обработчик click на lang-toggle зарегистрирован');
+    click(); // реальный клик кнопки
+    T_.renderState(T_.latestState); // флеш: на новом коде обработчик уже вызвал scheduleRender(latestState)
+    const ru = String(els['log-feed'].innerHTML);
+    assert.ok(ru.includes('Ответ завершен'), 'тот же снапшот перерисован на RU (сброс last*Hash)');
+    assert.ok(!ru.includes('Response complete'), 'EN заменён, не дополнен');
+    assert.strictEqual((ru.match(/class="log-row"/g) || []).length,
+      (en.match(/class="log-row"/g) || []).length, 'новых событий не появилось');
+  });
 });
 
 // 1: --replay не читает stdin: посторонняя строка (task 99) contaminates

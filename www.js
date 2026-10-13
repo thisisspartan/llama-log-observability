@@ -2540,6 +2540,7 @@ flowchart LR
         alert_load_fail: 'Failed to load log',
         alert_load_fail_http: 'Failed to load log: HTTP {status}',
         mermaid_unavailable: 'Diagram unavailable (Mermaid not loaded)',
+        mermaid_not_rendered: 'Diagram is not rendered yet — try again',
       },
       ru: {
         queue_badge_title: 'Отложенные задачи harness (llamacpp:requests_deferred, /metrics)',
@@ -2717,6 +2718,7 @@ flowchart LR
         alert_load_fail: 'Не удалось загрузить лог',
         alert_load_fail_http: 'Не удалось загрузить лог: HTTP {status}',
         mermaid_unavailable: 'Диаграмма недоступна (Mermaid не загружен)',
+        mermaid_not_rendered: 'Диаграмма ещё не отрисована — повторите',
       },
     };
     // Mermaid diagram source per language (no backticks — inside HTML_PAGE template literal)
@@ -2826,6 +2828,9 @@ flowchart LR
       qsa('[data-i18n-title]').forEach(el => { el.title = t(el.getAttribute('data-i18n-title')); });
       const pre = document.querySelector ? document.querySelector('.mermaid.flow-diagram') : null;
       if (pre) {
+        // Mermaid marks a rendered element data-processed="true" and SKIPS it on the next
+        // run() — without this reset a language switch turns the diagram into raw text.
+        pre.removeAttribute('data-processed');
         pre.textContent = I18N_MERMAID[LANG];
         if (window.mermaid) mermaid.run().catch((e) => console.error('mermaid render:', e));
       }
@@ -2838,6 +2843,14 @@ flowchart LR
       LANG = LANG === 'en' ? 'ru' : 'en';
       try { localStorage.setItem('wwwjs_lang', LANG); } catch (e) {}
       applyI18n();
+      // The render caches (last*Hash) skip identical data — after a language switch
+      // the SAME data must be re-rendered in the NEW language, so the caches are reset.
+      // Known limitation (by design): in LIVE while paused, scheduleRender is blocked by
+      // the pause gate and does not paint until resume — the static UI is still translated.
+      lastEventsHash = '';
+      lastHistHash = '';
+      lastLiveHash = '';
+      if (latestState) scheduleRender(latestState);
     });
 
     // Educational diagram: static Mermaid (no runtime data), CDN v11
@@ -3844,7 +3857,10 @@ flowchart LR
 
     if (window.EventSource) {
       const es = new EventSource('/events');
-      es.onopen = () => { sseWorking = true; initialLoadDone = true; };
+      // onopen fires on CONNECT, before any data — claiming "working" here pins
+      // pollFallback off even though no snapshot ever arrived (silent-empty-journal class).
+      // sseWorking=true is set ONLY in onmessage (a real snapshot).
+      es.onopen = () => { initialLoadDone = true; };
       es.onmessage = (e) => {
         sseWorking = true;
         initialLoadDone = true;
@@ -4118,9 +4134,11 @@ flowchart LR
     function open() {
       var src = document.querySelector('.flow-diagram svg');
       if (!src) {
-        // Mermaid is not loaded (a LAN without jsdelivr) or a click before mermaid.run():
-        // the metric formulas do not depend on the diagram — we open the window with a placeholder
-        canvas.innerHTML = '<div style="color:var(--dim);padding:20px">' + window.__wwwT('mermaid_unavailable') + '</div>';
+        // Two different causes, two honest texts: Mermaid not loaded (a LAN without jsdelivr)
+        // vs Mermaid loaded but the diagram not rendered yet (a click before mermaid.run()).
+        // The metric formulas do not depend on the diagram — we open the window with a placeholder.
+        var stubKey = window.mermaid ? 'mermaid_not_rendered' : 'mermaid_unavailable';
+        canvas.innerHTML = '<div style="color:var(--dim);padding:20px">' + window.__wwwT(stubKey) + '</div>';
         overlay.classList.add('open');
         return;
       }
