@@ -9,6 +9,7 @@ speculation and request history.
 **One file `www.js`. Pure Node.js. Zero dependencies.** Tests (`tests/`) run on
 `node --test` — Node stdlib only, nothing to install.
 
+[![tests](https://github.com/thisisspartan/llama-log-observability/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/thisisspartan/llama-log-observability/actions/workflows/test.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![dependencies: none](https://img.shields.io/badge/dependencies-none-green.svg)
 ![runtime: Node stdlib](https://img.shields.io/badge/Node.js-stdlib-orange.svg)

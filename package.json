@@ -1,0 +1,14 @@
+{
+  "name": "llama-log-observability",
+  "version": "1.0.0",
+  "description": "Realtime dashboard for llama-server (llama.cpp): KV cache, context checkpoints, MTP/n-gram speculation — zero dependencies.",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node www.js",
+    "test": "node --test tests/*.test.js"
+  }
+}
