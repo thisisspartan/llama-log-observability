@@ -444,8 +444,10 @@ function initNewTask(id, promptTokens, slotId) {
   state.task.deltaTokens = Math.max(0, promptTokens - state.task.lcpTokens);
 }
 
-// In --play stdin is not used — lines are fed from the file by timestamps
-const rl = PLAY === -1
+// In --play stdin is not used — lines are fed from the file by timestamps.
+// In --replay/--ring-model stdin must NOT reach the engine either: a stray line
+// (task 99 on stdin) would contaminate the deterministic snapshot the tests key on.
+const rl = LIVE_MODE
   ? readline.createInterface({ input: process.stdin, terminal: false })
   : null;
 
@@ -1444,6 +1446,11 @@ function handleLine(line) {
     }
   }
 }
+// 1b: handleLine is fed by UNTRUSTED stdin. An exception inside it (an exotic
+// line, a future parser regression) thrown from a 'line' event handler is an
+// uncaught exception — it would take down the whole monitor. Count, log to
+// stderr, keep serving: one bad line must not kill the observation.
+let parseErrors = 0;
 if (rl) rl.on('line', (raw) => {
   if (LIVE_MODE) {
     // Live lines are written to disk ONLY in LIVE (the block inside if (LIVE_MODE);
@@ -1461,7 +1468,12 @@ if (rl) rl.on('line', (raw) => {
     // In PLAYBACK live lines are not parsed and not buffered
     if (state.mode !== 'LIVE') return;
   }
-  handleLine(raw);
+  try {
+    handleLine(raw);
+  } catch (e) {
+    parseErrors++;
+    console.error(`[PARSE_ERROR #${parseErrors}] ${e && e.message ? e.message : String(e)}`);
+  }
 });
 
 // A2: the single entry point of a line into the engine — replay, play, load-log.
@@ -1666,11 +1678,16 @@ async function pollServer() {
   if (state.mode !== 'LIVE') return;
   if (serverPollBusy) return;
   serverPollBusy = true;
+  // 2: the timeout must cover the BODY read, not only the headers. The timer
+  // used to be cleared right after the headers arrived — a server that sends
+  // headers and then stalls the body left the fetch un-aborted forever: the
+  // finally never ran, serverPollBusy stayed true and EVERY subsequent poll
+  // was skipped (the monitor froze while /slots kept answering headers).
+  // Declare before try, disarm in finally: the abort now covers res.json().
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 400);
   try {
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), 400);
     const res = await fetch(`${SERVER_URL}/slots`, { signal: controller.signal });
-    clearTimeout(timer);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     if (Array.isArray(data) && data.length > 0) {
@@ -1753,6 +1770,7 @@ async function pollServer() {
   } catch (_) {
     markOffline();
   } finally {
+    clearTimeout(timer);
     serverPollBusy = false;
   }
 }
@@ -1763,12 +1781,13 @@ let metricsPollBusy = false;
 async function pollMetrics() {
   if (state.mode !== 'LIVE' || metricsPollBusy) return;
   metricsPollBusy = true;
+  // 2: same as pollServer — the timeout must cover the body read (mRes.text()),
+  // otherwise a stalled body pins metricsPollBusy forever.
+  const mCtrl = new AbortController();
+  const mTimer = setTimeout(() => mCtrl.abort(), 500);
   try {
     if (state.serverOnline) {
-      const mCtrl = new AbortController();
-      const mTimer = setTimeout(() => mCtrl.abort(), 500);
       const mRes = await fetch(`${SERVER_URL}/metrics`, { signal: mCtrl.signal });
-      clearTimeout(mTimer);
       if (mRes.ok) {
         const pm = state.serverMetrics;
         const prevQ = pm.queueDeferred;
@@ -1783,7 +1802,7 @@ async function pollMetrics() {
       }
     }
   } catch (_) { /* /metrics unavailable — ignore */ }
-  finally { metricsPollBusy = false; }
+  finally { clearTimeout(mTimer); metricsPollBusy = false; }
 }
 if (LIVE_MODE) {
   setInterval(pollServer, 500);
@@ -2086,7 +2105,7 @@ svg .nodeLabel small{font-size:8px !important;line-height:1 !important;color:#94
 .skew-tag{color:#f59e0b;font-size:10px}
 .hist-row-highlight { background: rgba(56,189,248,0.18) !important; outline: 1px solid var(--input); }
 /* #4: status bar — level 1: connection to the server, level 2: the task phase */
-.status-bar { display:flex; align-items:center; gap:10px; padding:6px 12px; background:var(--panel); border:1px solid var(--border); border-radius:9px; font-size:11px; flex-shrink:0; display:none !important; }
+.status-bar { display:flex; align-items:center; gap:10px; padding:6px 12px; background:var(--panel); border:1px solid var(--border); border-radius:9px; font-size:11px; flex-shrink:0; }
 .status-dot { width:9px; height:9px; border-radius:50%; display:inline-block; background:var(--dim); flex-shrink:0; }
 .dot-online { background:var(--reuse); box-shadow:0 0 6px var(--reuse); }
 .dot-offline { background:var(--red); box-shadow:0 0 6px var(--red); }
@@ -2100,7 +2119,7 @@ svg .nodeLabel small{font-size:8px !important;line-height:1 !important;color:#94
 .phase-DONE { background:#14532d; color:#86efac; }
 .queue-badge { margin-left:auto; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold; color:var(--prefill); background:rgba(234,179,8,.12); border:1px solid rgba(234,179,8,.4); }
 /* #4: the player panel (PLAY / load-log); in LIVE the speed/"again" dim out */
-.player-toolbar { display:flex; align-items:center; gap:8px; padding:6px 12px; background:var(--panel); border:1px solid var(--border); border-radius:9px; flex-shrink:0; display:none !important; }
+.player-toolbar { display:flex; align-items:center; gap:8px; padding:6px 12px; background:var(--panel); border:1px solid var(--border); border-radius:9px; flex-shrink:0; }
 .player-toolbar button { background:var(--panel2); border:1px solid var(--border); color:var(--text); font-family:inherit; font-size:12px; font-weight:700; padding:3px 10px; border-radius:5px; cursor:pointer; }
 .player-toolbar button:disabled { opacity:.4; cursor:default; }
 .player-toolbar select { background:var(--panel2); border:1px solid var(--border); color:var(--text); font-family:inherit; font-size:12px; padding:3px 6px; border-radius:5px; }
@@ -2109,7 +2128,7 @@ svg .nodeLabel small{font-size:8px !important;line-height:1 !important;color:#94
 .ctl-file-label input[type=file] { font-size:11px; color:var(--text); max-width:160px; }
 </style>
 <!-- #14: the exact version (a floating @11 could have swapped the render behavior) -->
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js" integrity="sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- #4: status bar — level 1: connection to the server, level 2: the task phase -->
@@ -2794,7 +2813,11 @@ flowchart LR
       let s = I18N[LANG][key];
       if (s == null) s = I18N.en[key];
       if (s == null) s = key;
-      if (vars) for (const k of Object.keys(vars)) s = s.split('{' + k + '}').join(vars[k]);
+      // 5: interpolated params land in innerHTML / title attributes — escape them.
+      // Params are mostly numbers today, but the interpolation point is the single
+      // place where a log-derived string (diverge pieces, future params) could
+      // inject markup. esc() is a hoisted declaration in this same script — safe.
+      if (vars) for (const k of Object.keys(vars)) s = s.split('{' + k + '}').join(esc(vars[k]));
       return s;
     }
     function applyI18n() {
@@ -4198,7 +4221,45 @@ function sameOrigin(req) {
   try { return new URL(h.origin).host === h.host; } catch (_) { return false; }
 }
 
+// 3: Host gate (DNS rebinding). A loopback bind is NOT enough: with DNS
+// rebinding evil.example → 127.0.0.1, a browser on evil.example sends
+// Host: evil.example and reaches the local monitor — the Host header is the
+// only discriminator. Default allowlist: loopback names + the literal
+// MONITOR_HOST (when it is not a wildcard). MONITOR_ALLOWED_HOSTS
+// (comma-separated) extends the list and makes it strict. A wildcard bind
+// without an allowlist accepts any Host but warns at startup — this preserves
+// explicit LAN deployments (MONITOR_HOST=0.0.0.0) while the default
+// loopback bind is now gated.
+const EXTRA_HOSTS = (process.env.MONITOR_ALLOWED_HOSTS || '')
+  .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+const WILDCARD_BIND = MONITOR_HOST === '0.0.0.0' || MONITOR_HOST === '::' || MONITOR_HOST === '*';
+const HOST_STRICT = EXTRA_HOSTS.length > 0 || !WILDCARD_BIND;
+const ALLOWED_HOSTNAMES = new Set(['127.0.0.1', 'localhost', '[::1]', '::1', 'ip6-localhost', 'ip6-loopback']);
+if (!WILDCARD_BIND) ALLOWED_HOSTNAMES.add(String(MONITOR_HOST).toLowerCase());
+for (const h of EXTRA_HOSTS) ALLOWED_HOSTNAMES.add(h);
+
+// Host header → hostname without the port ("evil.example:3000" → "evil.example")
+function hostName(req) {
+  const h = req.headers && req.headers.host;
+  if (!h) return '';
+  try { return new URL('http://' + h).hostname.toLowerCase(); } catch (_) { return String(h).toLowerCase(); }
+}
+function hostAllowed(req) {
+  if (!HOST_STRICT) return true; // wildcard bind without an allowlist — any Host (warned at startup)
+  return ALLOWED_HOSTNAMES.has(hostName(req));
+}
+function warnOpenBind() {
+  if (WILDCARD_BIND && EXTRA_HOSTS.length === 0) {
+    console.log(`\x1b[33m⚠️ MONITOR_HOST=${MONITOR_HOST} without MONITOR_ALLOWED_HOSTS: any Host header is accepted (DNS-rebinding exposure). Set MONITOR_ALLOWED_HOSTS to gate it.\x1b[0m`);
+  }
+}
+
 const server = http.createServer((req, res) => {
+  if (!hostAllowed(req)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Forbidden host');
+    return;
+  }
   if (req.url === '/' || req.url === '/index.html') {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
     res.end(HTML_PAGE);
@@ -4389,6 +4450,7 @@ if (RING_MODEL !== -1) {
     console.log(`\x1b[1m\x1b[32m🚀 HARDENED REALTIME PIPELINE MONITOR STARTED:\x1b[0m http://localhost:${WEB_PORT}`);
     console.log(`📡 Connecting to llama-server: ${SERVER_URL}`);
     console.log(`📝 Disk raw log enabled: ${LOG_FILE}\n`);
+    warnOpenBind();
   });
 } else if (REPLAY !== -1) {
   // Wall clock only: ts/time/stateAt — new Date() (the virtual clock does not
@@ -4402,16 +4464,22 @@ if (RING_MODEL !== -1) {
   // The virtual clock: Date.now() = the timestamp of the current log line,
   // otherwise the sweep of evicted slots (>2000 ms) depends on the real loop speed
   let replayTime = 0;
-  for (const raw of fs.readFileSync(argv[REPLAY + 1], 'utf8').split('\n')) {
-    const m = raw.match(/^\[([^\]]+)\] /);
-    if (m) {
-      const t = Date.parse(m[1]);
-      if (!Number.isNaN(t)) replayTime = t;
+  // 5: the virtual clock is a global patch — restore it in finally, not after
+  // the loop. If a line throws, the error path (and the exit) must not run
+  // with Date.now frozen at the last log timestamp.
+  try {
+    for (const raw of fs.readFileSync(argv[REPLAY + 1], 'utf8').split('\n')) {
+      const m = raw.match(/^\[([^\]]+)\] /);
+      if (m) {
+        const t = Date.parse(m[1]);
+        if (!Number.isNaN(t)) replayTime = t;
+      }
+      Date.now = () => replayTime;
+      feedLogLine(raw); // A2: the single entry point (currentLogTs + handleLine)
     }
-    Date.now = () => replayTime;
-    feedLogLine(raw); // A2: the single entry point (currentLogTs + handleLine)
+  } finally {
+    Date.now = realNow;
   }
-  Date.now = realNow;
   // Settle the pending DONE→IDLE transition. The 1500 ms timer in handleLine is an
   // anti-flicker guard: it delays IDLE so a follow-up request does not see an IDLE
   // blink. At end-of-log no follow-up is possible — the transition is due, so we
@@ -4437,6 +4505,7 @@ if (RING_MODEL !== -1) {
   state.serverOnline = true; // /slots is not polled — the OFFLINE badge is not shown
   server.listen(WEB_PORT, MONITOR_HOST, () => {
     console.log(`\x1b[1m\x1b[32m🎬 PLAY MODE:\x1b[0m http://localhost:${WEB_PORT} (log: ${argv[PLAY + 1]}, speed x${PLAY_SPEED})`);
+    warnOpenBind();
   });
   const lines = fs.readFileSync(argv[PLAY + 1], 'utf8').split('\n');
   // B5: without a single line with a valid [ISO] timestamp the playback

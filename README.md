@@ -157,6 +157,14 @@ Run it with `--parallel 1` and follow one request end to end.
   active task and discards foreign-task lines — by design (see “Why a single
   slot”).
 - **Node ≥ 18.** `www.js` uses the native global `fetch`.
+- **Host gate (DNS rebinding).** The monitor binds to `127.0.0.1` by default
+  and answers only loopback `Host` headers; a foreign `Host` (e.g. a page on
+  `evil.example` whose DNS now resolves to `127.0.0.1`) gets `403`. If you
+  bind with `MONITOR_HOST=0.0.0.0` for LAN access **without** setting
+  `MONITOR_ALLOWED_HOSTS`, any `Host` is accepted (the monitor prints a
+  startup warning). To keep LAN access but gate the `Host`, set
+  `MONITOR_ALLOWED_HOSTS="lan-host.example,192.168.1.10"` (comma-separated;
+  loopback names stay allowed).
 - **No TTFT metric.** The monitor reports measured prefill/decode speed; it
   does not compute time-to-first-token.
 

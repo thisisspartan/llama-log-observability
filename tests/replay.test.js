@@ -442,14 +442,16 @@ test('ring model: removed entry -> items with removedAt, live sum == used/limit 
   assert.ok(model.until >= dying[0].removedAt + 2000);
 });
 
-// --play: time-lapse воспроизведение лога (сервер поднимается на порту 3000
-// и остаётся работать после конца лога — резолвим по маркеру, потом SIGKILL)
+// --play: time-lapse воспроизведение лога (сервер поднимается на случайном
+// порту и остаётся работать после конца лога — резолвим по маркеру, потом
+// SIGKILL). Случайный порт: тесты не сталкиваются с живым монитором/CI на 3000.
 function playLog(lines, { timeoutMs = 20000 } = {}) {
   const { spawn } = require('node:child_process');
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'wwwjs-play-'));
   const log = path.join(dir, 'log.txt');
   fs.writeFileSync(log, lines.map(l => (typeof l === 'string' ? l : `[${l.ts}] ${l.msg}`)).join('\n') + '\n');
-  const child = spawn('node', [WWW, '--play', log, '--speed', '1000'], {
+  const monPort = 40000 + Math.floor(Math.random() * 9000);
+  const child = spawn('node', [WWW, '--play', log, '--speed', '1000', '--port', String(monPort)], {
     env: { ...process.env, LLAMA_LOG_FILE: '/dev/null' },
     stdio: ['ignore', 'pipe', 'pipe']
   });
@@ -640,7 +642,8 @@ test('N4 gate: --play виртуальные часы идут в реально
   fs.writeFileSync(log,
     `[${T(0)}] slot create_check: id  0 | task 327 | created context checkpoint 1 of 32 (pos_min = 100, pos_max = 100, n_tokens = 101, size = 1.500 MiB)\n` +
     `[${T100}] srv update: - cache state: 1 prompts, 100.000 MiB (limits: 40960.000 MiB, 123136 tokens, 100000 est)\n`);
-  const child = spawn('node', [WWW, '--play', log, '--speed', '10'], {
+  const port = 30000 + Math.floor(Math.random() * 20000); // случайный порт: не сталкиваться с живым монитором на 3000
+  const child = spawn('node', [WWW, '--play', log, '--speed', '10', '--port', String(port)], {
     env: { ...process.env, LLAMA_LOG_FILE: '/dev/null' },
     stdio: ['ignore', 'pipe', 'pipe']
   });
@@ -655,7 +658,7 @@ test('N4 gate: --play виртуальные часы идут в реально
       child.stderr.on('data', (d) => { out += d; });
     });
     const state = await new Promise((resolve, reject) => {
-      http.get('http://127.0.0.1:3000/api/state', (res) => {
+      http.get(`http://127.0.0.1:${port}/api/state`, (res) => {
         let b = '';
         res.on('data', (d) => { b += d; });
         res.on('end', () => resolve(JSON.parse(b)));
@@ -2361,4 +2364,42 @@ test('UI-render: events — серверные ключи рендерятся �
   const html = String(els['log-feed'].innerHTML);
   assert.ok(html.includes('Response complete'), 'event title — английский (default lang)');
   assert.ok(html.includes('Generated <b>100</b> tok. in 1.00 s'), 'event detail — params подставлены');
+});
+
+// 5: params i18n экранируются в t() — параметр из содержимого лога не может
+// инжектить разметку в innerHTML (XSS-замок на join(esc(vars[k]))).
+test('UI-render: params i18n экранированы — XSS из параметра не инжектится', async () => {
+  await getClientScript();
+  const st = mkUiState(5, ['0.975', '0.698', '0.531', '0.415', '0.337']);
+  st.events = [{ ts: '12:00:00', stage: 'DONE', tag: 'DONE', titleKey: 'ev_done_title', detailKey: 'ev_done_detail', params: { tok: '<script>alert(1)</script>', sec: '1.00', tps: '10.0' }, id: 1, taskId: '1' }];
+  const { els } = runRenderCase(st, (T_) => {
+    T_.setEvents(st.events);
+    T_.renderState(st);
+  });
+  const html = String(els['log-feed'].innerHTML);
+  assert.ok(!html.includes('<script>alert(1)'), 'сырой XSS из param не попадает в innerHTML');
+  assert.ok(html.includes('&lt;script&gt;alert(1)&lt;/script&gt;'), 'param экранирован');
+});
+
+// 1: --replay не читает stdin: посторонняя строка (task 99) contaminates
+// детерминированный снапшот, на который завязаны тесты. rl создаётся только
+// в LIVE; снапшот с stdin идентичен снапшоту без stdin.
+test('1: --replay игнорирует stdin — посторонняя строка не контаминирует снапшот', () => {
+  const lines = [
+    { ts: T(0), msg: 'slot operator(): id  0 | task 327 | new prompt, n_ctx_slot = 123136, n_keep = 0, task.n_tokens = 100' },
+    { ts: T(1), msg: 'slot print_timing: id  0 | task 327 | prompt eval time =  100.00 ms / 100 tokens ( 1.00 ms per token, 1000.00 tokens per second)' },
+    { ts: T(2), msg: 'slot print_timing: id  0 | task 327 | n_gen =    10, tg =  20.00 t/s' }
+  ];
+  const baseline = replay(lines); // stdio: 'ignore' — stdin закрыт
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'wwwjs-test-'));
+  const log = path.join(dir, 'log.txt');
+  const out = path.join(dir, 'out.json');
+  fs.writeFileSync(log, lines.map(l => `[${l.ts}] ${l.msg}`).join('\n') + '\n');
+  execFileSync('node', [WWW, '--replay', log, out], {
+    input: 'slot operator(): id  0 | task 99 | new prompt, n_ctx_slot = 123136, n_keep = 0, task.n_tokens = 777\n',
+    stdio: ['pipe', 'ignore', 'ignore'],
+    env: { ...process.env, LLAMA_LOG_FILE: '/dev/null' }
+  });
+  const withStdin = JSON.parse(fs.readFileSync(out, 'utf8'));
+  assert.deepStrictEqual(withStdin, baseline);
 });
