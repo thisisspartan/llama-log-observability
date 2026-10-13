@@ -1,0 +1,26 @@
+# Test contract: the suite is node:test (Node stdlib) — zero dependencies,
+# nothing to install. Node pinned to 22 (matches the development host).
+# Runner pinned to ubuntu-24.04 (ubuntu-latest moves to Ubuntu 26 on
+# 2026-10-19 — the environment must not drift under the contract).
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Run test suite (node --test, zero deps)
+        run: node --test tests/*.test.js

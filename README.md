@@ -6,7 +6,8 @@ Realtime dashboard for `llama-server` (llama.cpp): it parses the server log and
 renders a live picture of the KV cache, context checkpoints, MTP / n-gram
 speculation and request history.
 
-**One file `www.js`. Pure Node.js. Zero dependencies.**
+**One file `www.js`. Pure Node.js. Zero dependencies.** Tests (`tests/`) run on
+`node --test` — Node stdlib only, nothing to install.
 
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![dependencies: none](https://img.shields.io/badge/dependencies-none-green.svg)
