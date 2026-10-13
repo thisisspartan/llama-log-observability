@@ -4412,11 +4412,21 @@ if (RING_MODEL !== -1) {
     feedLogLine(raw); // A2: the single entry point (currentLogTs + handleLine)
   }
   Date.now = realNow;
+  // Settle the pending DONE→IDLE transition. The 1500 ms timer in handleLine is an
+  // anti-flicker guard: it delays IDLE so a follow-up request does not see an IDLE
+  // blink. At end-of-log no follow-up is possible — the transition is due, so we
+  // complete it here (same condition as the timer callback). The previous fixed
+  // 2000 ms wait existed only to let that timer fire — it added 2 s to every
+  // --replay invocation (97 tests in the suite).
+  if (state._awaitingIdle && !state.is_processing) {
+    state._awaitingIdle = false;
+    state.currentStage = 'IDLE';
+  }
   setTimeout(() => {
     state.events.forEach(e => delete e.id);
     fs.writeFileSync(argv[REPLAY + 2], JSON.stringify(state, (k, v) => VOLATILE.has(k) ? undefined : v, 2));
     process.exit(0);
-  }, 2000);
+  }, 0);
 } else {
   // PLAYBACK (CLI --play): the lines are fed by timestamps (time-lapse), without
   // writing to the log and without polling /slots. The server keeps working after the end

@@ -4,6 +4,15 @@
 // два последовательных task через stdin. Доказывает, что stale /slots-ответ
 // task A НЕ способен перезаписать счётчики task B.
 // Запуск: node --test tests/
+//
+// Тайминг: waitState() — condition polling (проверка условия каждые 100 мс,
+// таймаут 8 с) вместо фиксированных sleep(1200). Монитор работает в ОТДЕЛЬНОМ
+// процессе (spawn), поэтому node:test mock.timers до него не дотягивается —
+// condition polling является корректным эквивалентом: быстрее (не ждём лишнего)
+// и детерминированнее (не зависим от того, успел ли поллинг за фиксированный сон).
+// Для доказательств «не перезаписал» (значение НЕ должно измениться) условия
+// недостаточно — там ждём ровно один полный цикл поллинга монитора (POLL_CYCLE:
+// setInterval(pollServer, 500) + flushState 100 мс в www.js) и сверяем снимки.
 const { test } = require('node:test');
 const assert = require('node:assert');
 const { spawn } = require('node:child_process');
@@ -12,6 +21,7 @@ const path = require('node:path');
 
 const WWW = path.join(__dirname, '..', 'www.js');
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const POLL_CYCLE = 700; // ≥ один цикл pollServer(500 мс) + flushState(100 мс)
 
 // Скриптуемый mock llama-server: тест выставляет mock.slotPayload,
 // /slots отдаёт его текущее значение (так моделируется stale HTTP-ответ).
@@ -71,6 +81,21 @@ async function fetchState(monPort) {
   return res.json();
 }
 
+// condition polling: ждём, пока состояние монитора удовлетворит pred;
+// по таймаунту — падение с последним снимком (диагностика, не тихий сон)
+async function waitState(monPort, pred, label, timeoutMs = 8000) {
+  const t0 = Date.now();
+  for (;;) {
+    const s = await fetchState(monPort);
+    if (pred(s)) return s;
+    if (Date.now() - t0 > timeoutMs) {
+      throw new Error('waitState timeout (' + label + '): last=' +
+        JSON.stringify({ n_prompt_tokens: s.n_prompt_tokens, task: s.task }));
+    }
+    await sleep(100);
+  }
+}
+
 test('C1/C2/C5: stale /slots response of task A cannot overwrite task B', async () => {
   const { mock, srv } = await startMockSlots();
   const { child, monPort, getStderr } = await startMonitor(mock.port);
@@ -78,8 +103,8 @@ test('C1/C2/C5: stale /slots response of task A cannot overwrite task B', async 
     // Фаза 0: отслеживаемого task нет (id == null) — слот даёт только
     // slot-level поля (occupancy/is_processing), task-счётчики не трогаются
     mock.slotPayload = slotPayload({ idTask: 999, processing: true, prompt: 5000, processed: 4000, cached: 1000, decoded: 300 });
-    await sleep(1200);
-    let s = await fetchState(monPort);
+    let s = await waitState(monPort, s => s.n_prompt_tokens === 5000 && s.task.id === null,
+      'фаза 0: occupancy применён, task не отслеживается');
     assert.strictEqual(s.n_prompt_tokens, 5000, 'occupancy из /slots');
     assert.strictEqual(s.is_processing, true);
     assert.strictEqual(s.task.id, null);
@@ -90,20 +115,20 @@ test('C1/C2/C5: stale /slots response of task A cannot overwrite task B', async 
     // Фаза 1: task A (id 1) — new prompt из stdin, /slots с id_task=1
     mock.slotPayload = slotPayload({ idTask: 1, processing: true, prompt: 1000, processed: 200, cached: 800, decoded: 50 });
     child.stdin.write('slot operator(): id  0 | task 1 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 1000\n');
-    await sleep(1200);
-    s = await fetchState(monPort);
+    s = await waitState(monPort, s => s.task.id === '1' && s.task.prefillTokens === 200 && s.task.generatedTokens === 50,
+      'фаза 1: счётчики task A применены');
     assert.strictEqual(s.task.id, '1');
     assert.strictEqual(s.task.totalPrompt, 1000);
     assert.strictEqual(s.task.kvRestoredTokens, 800, 'KV REUSE = n_prompt_tokens_cache');
-    assert.strictEqual(s.task.prefillTokens, 200, 'PREFILL = n_prompt_tokens_processed');
     assert.strictEqual(s.task.prefillTimingSeen, true, 'H7: 0/200 — измерено');
-    assert.strictEqual(s.task.generatedTokens, 50, 'DECODE = next_token[0].n_decoded');
 
     // Фаза 2: task B (id 2) стартовал, а в полёте stale-ответ task A
     // (id_task=1 со счётчиками A) — он должен быть DISCARD
     mock.slotPayload = slotPayload({ idTask: 1, processing: true, prompt: 1000, processed: 200, cached: 800, decoded: 50 });
     child.stdin.write('slot operator(): id  0 | task 2 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 2000\n');
-    await sleep(1200);
+    s = await waitState(monPort, s => s.task.id === '2' && s.task.totalPrompt === 2000,
+      'фаза 2: task B отслеживается из лога');
+    await sleep(POLL_CYCLE); // ≥ один поллинг stale-ответа A ПОСЛЕ трекинга B
     s = await fetchState(monPort);
     assert.strictEqual(s.task.id, '2');
     assert.strictEqual(s.task.totalPrompt, 2000);
@@ -114,12 +139,9 @@ test('C1/C2/C5: stale /slots response of task A cannot overwrite task B', async 
 
     // Фаза 3: корректный ответ task B (id_task=2) — применяется
     mock.slotPayload = slotPayload({ idTask: 2, processing: true, prompt: 2000, processed: 300, cached: 1500, decoded: 70 });
-    await sleep(1200);
-    s = await fetchState(monPort);
+    s = await waitState(monPort, s => s.task.kvRestoredTokens === 1500 && s.task.prefillTokens === 300 && s.task.generatedTokens === 70,
+      'фаза 3: корректный ответ B применён');
     assert.strictEqual(s.task.id, '2');
-    assert.strictEqual(s.task.kvRestoredTokens, 1500);
-    assert.strictEqual(s.task.prefillTokens, 300);
-    assert.strictEqual(s.task.generatedTokens, 70);
     assert.strictEqual(s.n_prompt_tokens, 2000);
   } finally {
     child.kill('SIGKILL');
@@ -141,14 +163,14 @@ test('п.1: kvEventEmitted-guard — /slots не перезаписывает KV
     mock.slotPayload = slotPayload({ idTask: 1, processing: true, prompt: 1000, processed: 200, cached: 800, decoded: 50 });
     child.stdin.write('slot operator(): id  0 | task 1 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 1000\n');
     child.stdin.write('slot operator(): id  0 | task 1 | restored context checkpoint (pos_min = 799, pos_max = 799, n_tokens = 800, n_past = 800, size = 120.000 MiB)\n');
-    await sleep(1200);
-    let s = await fetchState(monPort);
+    let s = await waitState(monPort, s => s.task.id === '1' && s.task.kvRestoredTokens === 800,
+      'A: KV из лога (n_past)');
     assert.strictEqual(s.task.kvRestoredTokens, 800, 'KV из лога (n_past)');
 
     // Stale /slots с тем же id_task, но cache=0 (in-flight снимок до
     // prompt-processing) — доказанное значение не сбрасывается
     mock.slotPayload = slotPayload({ idTask: 1, processing: true, prompt: 1000, processed: 200, cached: 0, decoded: 50 });
-    await sleep(1200);
+    await sleep(POLL_CYCLE); // stale-ответ точно будет отдан на поллинг
     s = await fetchState(monPort);
     assert.strictEqual(s.task.kvRestoredTokens, 800, 'stale /slots (cache=0) не перезаписал лог');
 
@@ -157,9 +179,9 @@ test('п.1: kvEventEmitted-guard — /slots не перезаписывает KV
     mock.slotPayload = slotPayload({ idTask: 2, processing: true, prompt: 2000, processed: 100, cached: 94676, decoded: 0 });
     child.stdin.write('slot operator(): id  0 | task 2 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 2000\n');
     child.stdin.write('slot operator(): id  0 | task 2 | forcing full prompt re-processing due to lack of cache data (likely due to SWA or hybrid/recurrent memory)\n');
-    await sleep(1200);
+    s = await waitState(monPort, s => s.task.id === '2', 'B: отслеживается');
+    await sleep(POLL_CYCLE); // stale 94676 точно будет отдан на поллинг
     s = await fetchState(monPort);
-    assert.strictEqual(s.task.id, '2');
     assert.strictEqual(s.task.kvRestoredTokens, 0, 'full re-processing: kv=0, stale 94676 не прилип');
   } finally {
     child.kill('SIGKILL');
@@ -176,18 +198,16 @@ test('п.2: prefillTokens — stale снимок ниже не откатыва�
   try {
     mock.slotPayload = slotPayload({ idTask: 3, processing: true, prompt: 60000, processed: 50000, cached: 0, decoded: 0 });
     child.stdin.write('slot operator(): id  0 | task 3 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 60000\n');
-    await sleep(1200);
-    let s = await fetchState(monPort);
+    let s = await waitState(monPort, s => s.task.prefillTokens === 50000, '50000 применено');
     assert.strictEqual(s.task.prefillTokens, 50000);
 
     mock.slotPayload = slotPayload({ idTask: 3, processing: true, prompt: 60000, processed: 52000, cached: 0, decoded: 0 });
-    await sleep(1200);
-    s = await fetchState(monPort);
+    s = await waitState(monPort, s => s.task.prefillTokens === 52000, '52000 применено');
     assert.strictEqual(s.task.prefillTokens, 52000);
 
     // Stale in-flight снимок с меньшим значением — отката нет
     mock.slotPayload = slotPayload({ idTask: 3, processing: true, prompt: 60000, processed: 51000, cached: 0, decoded: 0 });
-    await sleep(1200);
+    await sleep(POLL_CYCLE); // stale 51000 точно будет отдан на поллинг
     s = await fetchState(monPort);
     assert.strictEqual(s.task.prefillTokens, 52000, 'stale 51000 не откатил 52000');
     assert.strictEqual(s.task.prefillTimingSeen, true, 'H7: значение измерено');
@@ -205,9 +225,9 @@ test('H7b: /slots processed=0 — prefillTimingSeen остаётся false', asy
   try {
     mock.slotPayload = slotPayload({ idTask: 1, processing: true, prompt: 1000, processed: 0, cached: 1000, decoded: 0 });
     child.stdin.write('slot operator(): id  0 | task 1 | new prompt, n_ctx_slot = 124160, n_keep = 0, task.n_tokens = 1000\n');
-    await sleep(1200);
+    await waitState(monPort, s => s.task.id === '1', 'task отслеживается');
+    await sleep(POLL_CYCLE); // ответ processed=0 точно будет отдан на поллинг
     const s = await fetchState(monPort);
-    assert.strictEqual(s.task.id, '1');
     assert.strictEqual(s.task.prefillTokens, 0);
     assert.strictEqual(s.task.prefillTimingSeen, false, 'processed=0 — не доказательство измерения');
   } finally {
